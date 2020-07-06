@@ -1,51 +1,31 @@
 .hoss{
   font-family: 'Changa', sans-serif;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
 }
-#components{
-  margin-left: 25%;
-}
+
 #cardimage{
   border-radius: 5% 5%;
   height: 10%;
   width: 10%;
-  
-
 }
 #card{
-  background-image: url(https://cdn.dribbble.com/users/19426/screenshots/838822/oldmonitor.png);
-  background-repeat: no-repeat, repeat;
-  background-color: #cccccc;
-  background-size: 131rem 90rem;
+  width:105rem;
+  height: 50rem;
+  background:rgba(49, 46, 46, 0.8);
+  background-repeat: no-repeat;
+  background-size: 161rem 90rem;
   background-position: center;
   border-radius: 5% 5%;
-  margin-left: 8%;
-  color :blue;
+  color :white;
   font-size: 3.5rem;
-  background-color: grey;
-  margin-bottom: 17%;
+  margin-bottom: 30%;
 }
 .textCard{
-  color :blue;
-  display: "inline-block";
-  border: "1px solid #ccc";
-  margin-bottom: "1em";
-  padding: "2em 1em 1em 1em";
-  width: "80%";
+  color :white;
+  width: 100%;
   font-size: 1.9rem;
-}
-.flash{
-  color :blue;
-  display: "inline";
-  position: relative;
-  font-size: 2.9rem;
-}
-#cardtitle{
-  margin-top: 9%;
 }
 
 #hossik{
@@ -53,35 +33,18 @@
     color: blue;
     font-weight: bold;
 }
-.header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.btn-circle {
-  margin-top: 5%;
-  width: 30px;
-  height: 30px;
-  padding: 6px 0px;
-  border-radius: 15px;
-  text-align: center;
-  font-size: 12px;
-}
+
 .btn-circle.btn-xl {
-    width: 120px;
-    height: 90px;
-    padding: 10px 16px;
-    border-radius: 35px;
-    font-size: 24px;
+  width: 120px;
+  height: 90px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
 }
 .tn{
   margin-left: 20px;
 }
-html, body, #root, #root>div {
-  background-color: black;
-  
-}
+
 .links{
   color: inherit;
   text-decoration: inherit;
@@ -138,6 +101,106 @@ div.transition-group {
 section.route-section {
   position: absolute; 
 }
-.inline{
-  display: inline;
+
+@media (min-aspect-ratio: 16/9) {
+  #videoBG {
+      width:100%;
+      height: auto;
+  }
+  
+}
+@media (max-aspect-ratio: 16/9) {
+  #videoBG { 
+      width:auto;
+      height: 100%;
+  }
+
+  
+  
+}
+
+@media (max-width: 767px) {
+
+#videoBG {
+  display: none;
+}
+html, body, #root, #root>div {
+  background: url('/assets/photocover.png')  ;
+}
+#card{
+  width:20rem;
+  height: 50rem;
+  font-size: 1.5rem;
+}
+#cardtitle{
+  font-size: 1.5rem;
+}
+#dark-overlay {
+
+  height: 190vh;
+}
+#nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-left: 4rem;
+}
+
+}
+@media screen and (orientation: landscape) {
+  #dark-overlay {
+
+    height: 342vh;
+  }
+  
+}
+
+
+#videoBG {
+  position:fixed;
+    z-index: -1;
+
+}
+
+.dark-overlay {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(184, 176, 176, 0.5) ;
+  height: 170vh;
+}
+.landing{
+  position: relative;
+  height: 100vh;
+}
+
+.landing-inner{
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+  margin-left: 4rem;
+  
+}
+#nav {
+  color: rgb(76, 76, 204);
+}
+#nav:hover{
+  color: rgb(19, 19, 48);
 }

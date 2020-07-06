@@ -1,19 +1,17 @@
 import React from 'react';
-import classes from './BackgroundVideo.module.css';
 import Main from './Main';
 import { BrowserRouter } from 'react-router-dom';
 
 const BackgroundVideo = () => {
     const videoSource = "../assets/videoCover.mp4"
     return (
-        <div className={classes.Container} >
-            <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
+        <section className="landing">
+        <div className="dark-overlay" id= "dark-overlay">
+        <video autoPlay="autoplay" loop="loop" muted id="videoBG">
                 <source src={videoSource} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-
-            <div className={classes.Content}>
-                
+                <div className="landing-inner">
                 <BrowserRouter >
                 <div className='hoss'>
                     <Main/>
@@ -22,6 +20,10 @@ const BackgroundVideo = () => {
                 
             </div>
         </div>
+    </section>
+
+
+
     )
 }
 

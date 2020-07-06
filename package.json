@@ -20,6 +20,7 @@
     "react": "^16.13.1",
     "react-animated-text": "^0.1.4",
     "react-animation-components": "^3.0.0",
+    "react-burger-menu": "^2.7.0",
     "react-dom": "^16.13.1",
     "react-external-link": "^1.1.1",
     "react-router-dom": "^5.2.0",
