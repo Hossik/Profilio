@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CardImg, CardText, CardBody,  CardSubtitle } from 'reactstrap';
+import { CardText, CardBody,  CardSubtitle } from 'reactstrap';
 import Typist from 'react-typist';
 
 export class Home extends Component {
@@ -19,13 +19,13 @@ export class Home extends Component {
   render(){
   return (
     <div>     
-      <CardBody>
+      <CardBody >
         <CardSubtitle >
-            <Typist className="textCard">
-              Hello, My Name is Hossik<CardImg top id="cardimage"  width="100%" src="../assets/hossik.jpeg" alt="hossik" />.
-            </Typist>
-        </CardSubtitle>
-        <CardText className="textCard" >
+          <Typist className="textCard">
+            Hello, My Name is Hossik.
+          </Typist>
+        </CardSubtitle >
+        <CardText id="zir" className="textCard">
           
           <Typist  
           className="textCard"

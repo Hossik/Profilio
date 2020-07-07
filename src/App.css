@@ -17,7 +17,7 @@
   background-repeat: no-repeat;
   background-size: 161rem 90rem;
   background-position: center;
-  border-radius: 5% 5%;
+  border-radius: 5% ;
   color :white;
   font-size: 3.5rem;
   margin-bottom: 30%;
@@ -29,13 +29,14 @@
 }
 
 #hossik{
-    font-size: 300%;
-    color: blue;
+    font-size: 250%;
+    color: rgb(233, 212, 25);
     font-weight: bold;
+    z-index: -1;
 }
 
 .btn-circle.btn-xl {
-  width: 120px;
+  width: 160px;
   height: 90px;
   padding: 10px 16px;
   border-radius: 35px;
@@ -121,12 +122,8 @@ section.route-section {
 
 @media (max-width: 767px) {
 
-#videoBG {
-  display: none;
-}
-html, body, #root, #root>div {
-  background: url('/assets/photocover.png')  ;
-}
+
+
 #card{
   width:20rem;
   height: 50rem;
@@ -139,20 +136,13 @@ html, body, #root, #root>div {
 
   height: 190vh;
 }
-#nav{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-left: 4rem;
-}
+
 
 }
 @media screen and (orientation: landscape) {
   #dark-overlay {
 
-    height: 342vh;
+    height: 370vh;
   }
   
 }
@@ -185,22 +175,18 @@ html, body, #root, #root>div {
   width: 80%;
   margin: auto;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
-
-.nav-link{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: xx-large;
-  margin-left: 4rem;
-  
+#head{
+  position: relative;
+  z-index: 100;
 }
-#nav {
-  color: rgb(76, 76, 204);
+#zir{
+  position: relative;
+  z-index: 1;
 }
-#nav:hover{
-  color: rgb(19, 19, 48);
+#man{
+  height: 4rem;
+  width: 4rem;
+  border-radius: 35px;
 }

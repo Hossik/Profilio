@@ -24,7 +24,7 @@ export class Test extends Component {
     render() {
         return (
         <React.Fragment>
-            <section className="inline" id="hossik">
+            <section id="hossik">
             <ReactTextTransition
                 text={texts[this.state.textIndex % texts.length]}
                 spring={presets.gentle}
