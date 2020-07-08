@@ -1,17 +1,7 @@
 $bg-color: #333;
 $bl-color: #22BAD9;
 
-
-body {
-  font-family: monospace;
-  font-size: 18px;
-  line-height: 1.7;
-  background-color: #333333;
-  padding: 25px 50px;
-}
-
-.TypistExample {
-
+.TypistExample {   
   a {
     color: inherit;
     &:hover {
@@ -21,22 +11,25 @@ body {
     }
   }
   &-header {
-    margin-top: 5%;
-    margin-bottom: 15%;
+    margin-top: 8%;
     text-align: center;
-    font-size: 3em;
+    font-size: 1.5em;
     cursor: pointer;
     color: $bl-color;
+
   }
   &-message {
-    color: hotpink;
-    width: 400px;
-    margin: auto;
+  display : flex;
+  flex-direction :column;
+  justify-content : center;
+  align-items : center;
+  color: hotpink;
+ 
     .flash {
       color: $bl-color;
       font-weight: bold;
       text-decoration: underline;
-
+      margin: auto;
       animation-name: blinker;
       animation-duration: 0.7s;
       animation-timing-function: linear;

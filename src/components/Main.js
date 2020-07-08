@@ -41,12 +41,9 @@ class Main extends Component {
     </MDBBtn>
     <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>    
     <div className="container"  >
-      <div className="row " > 
-      
+      <div className="row " >    
         <Card id="card" >
-          {console.log("this.state.collapseID",this.state.collapseID)}
           <Header id="head"/>
-
           <div >
           <TransitionGroup  >
             <CSSTransition  key={this.props.location.key} classNames="fade" timeout={{ enter: 300, exit: 300 }}>
@@ -63,7 +60,7 @@ class Main extends Component {
           </CSSTransition>
           </TransitionGroup>
           </div>
-          <Footer className="footer" />
+          <Footer />
         </Card>
       </div>
     </div>
