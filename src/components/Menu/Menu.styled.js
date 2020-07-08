@@ -4,7 +4,7 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(184, 176, 176, 0.8);
+  background: rgba(184, 176, 176);
   height: 97vh;
   text-align: left;
   padding: 2rem;
@@ -17,7 +17,9 @@ export const StyledMenu = styled.nav`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
   }
-
+  @media only screen and (max-width:1025px ) and (min-width:1020px )  {
+    height: 80vh;  
+  }
   a {
     font-size: 2rem;
     text-transform: uppercase;
@@ -33,7 +35,7 @@ export const StyledMenu = styled.nav`
       text-align: center;
     }
     &:hover {
-        color: ${({ theme }) => theme.primaryHover};
+        color: rgb(233, 212, 25);
       }
     }
     transform: translateX(-100%);

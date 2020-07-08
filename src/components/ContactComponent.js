@@ -1,51 +1,53 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import {  CardImg, CardText, CardBody,  CardSubtitle,CardFooter } from 'reactstrap';
+import Typist from 'react-typist';
 
-const Facebook = () => {
-    return (
-      <div>
-        <CardImg id="cardimage" width="100%" height="100%" src='../assets/face.png'/>
-      </div>
-    )
-  }
-  const Linkedin = () => {
-    return (
-      <div>
-        <CardImg id="cardimage" width="100%" height="100%" src='../assets/hoss.jpeg'/>
-      </div>
-    )
-  }
-  const Github = () => {
-    return (
-      <div>
-        <CardImg id="cardimage" width="100%" height="100%" src='../assets/hoss.jpeg'/>
-      </div>
-    )
-  }
 export class Contacts extends Component {
-    render() {
-        return (
-        <div>
-          <Switch>
-            <Route path="/facebook" component={Facebook} />
-            <Route path="/linkedin" component={Linkedin} />
-            <Route path="/github" component={Github} />
-            <Redirect to="/github" />
-          </Switch>
-          <CardBody>
-            <CardSubtitle className='row justify-content-center'>Hello, My Name is Hossik</CardSubtitle>
-            <CardText id="cardtext">I am a Designer / Front End Developer living in Kyiv, Ukraine.
-          </CardText>
-          </CardBody>
-          <CardFooter>
-            <Link className="links" to="/facebook"><span>facebook</span></Link>
-            <Link className="links" to="/linkedin"><span>linkedin</span></Link>
-            <Link className="links" to="/github"><span>github</span></Link>
-          </CardFooter>
-        </div>
-        )
-    }
+  state ={
+    blinking : "|" 
+  }
+  blink = () => {
+    this.setState({
+      blinking :"_"
+    })
+  } 
+  blinkFinish = () => {
+    this.setState({
+      blinking :"|"
+    })
+  } 
+  render(){
+  return (
+    <div >
+    <Typist className="textCard"
+      stdTypingDelay="100" 
+      startDelay="1000"
+      cursor={{
+        show: false
+      }}>
+        <p  id="zir" >
+        Its Me Typist will animate any text 
+        </p>
+    </Typist>
+        <br/>
+      {<Typist  
+      className="textCardtwo"
+      stdTypingDelay="100" 
+      startDelay="2500"
+      cursor={{
+        show: true,
+        blink: true,
+        element: this.state.blinking,
+        hideWhenDone: true,
+        hideWhenDoneDelay: '1000',
+      }}
+      onCharacterTyped={this.blink}
+      onLineTyped={this.blinkFinish}
+      onTypingDone={this.blinkFinish}
+      >        
+      <span >Typist will animate any text present in its descendents. Each text node will be animated</span><Typist.Delay ms={2500} /><Typist.Backspace count={8} delay={200} /><br/><Typist.Delay ms={2500} /><span>as it is encountered in depth-first traversal of the children tree, one after the other.</span>
+      </Typist>}
+      </div>
+    )
+  }
 }
-
 export default Contacts;

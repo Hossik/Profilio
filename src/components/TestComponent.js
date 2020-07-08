@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import ReactTextTransition, { presets } from "react-text-transition";
 
 const texts = ["Click", "or", "Die"]
-
-export class Test extends Component {
+const secondtexts = ["Click", "to", "Close"]
+export class Test extends Component  {
     state = {
         textIndex: 0,
         textFastIndex: 0
@@ -24,9 +24,9 @@ export class Test extends Component {
     render() {
         return (
         <React.Fragment>
-            <section id="hossik">
+            <section id={this.props.isOpen ? "nohossik" : "hossik" }>
             <ReactTextTransition
-                text={texts[this.state.textIndex % texts.length]}
+                text= {this.props.isOpen ? secondtexts[this.state.textIndex % secondtexts.length] : texts[this.state.textIndex % texts.length] }
                 spring={presets.gentle}
                 className="big"
                 delay={300}
