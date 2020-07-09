@@ -13,7 +13,7 @@
 #card{
   width:105rem;
   height: 63rem;
-  background:rgba(49, 46, 46);
+  background:rgb(0, 0, 0);
   background-repeat: no-repeat;
   background-size: 161rem 90rem;
   background-position: center;
@@ -53,19 +53,27 @@
 }
 
 #hossik{
-    font-size: 230%;
-    color: rgb(233, 212, 25);
+    font-size:150% ;
+    color: #FFDC00;
     font-weight: bold;
     z-index: -1;
+    
 }
 
 #nohossik{
-  font-size: 150%;
+  font-size: 230%;
     color: rgb(233, 25, 25);
     font-weight: bold;
     z-index: -1;
 }
-
+#start{
+  background-color: brown;
+  width: 150%;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding-right: 50%;
+}
 .btn-circle.btn-xl {
   width: 160px;
   height: 90px;

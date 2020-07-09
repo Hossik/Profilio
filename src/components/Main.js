@@ -31,12 +31,11 @@ class Main extends Component {
     
   return (
       
-  <React.Fragment className="header col-12 col-md-10 " >
+  <React.Fragment className="header col-12 col-md-10" >
       
-    <MDBBtn
-      className="btn btn-dark btn-circle btn-xl"
+    <MDBBtn color={this.state.collapseID ? "red darken-4" : "yellow" }className="btn  btn-circle btn-xl "
       onClick={this.toggleCollapse("basicCollapse")}>
-      <i ><Test
+      <i> <Test
       isOpen={this.state.collapseID}/></i>    
     </MDBBtn>
     <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>    
@@ -49,7 +48,7 @@ class Main extends Component {
             <CSSTransition  key={this.props.location.key} classNames="fade" timeout={{ enter: 300, exit: 300 }}>
             <section className="route-section">
           <Switch location={this.props.location}>
-            <Route  path="/home" component={Home} />
+            <Route  path="/home" component={() => <Home isOpen={this.state.collapseID}/>} />
             <Route path="/aboutMe" component={AboutMe} />
             <Route path="/tools" component={Tools} />
             <Route path="/contacts" component={Contacts} />

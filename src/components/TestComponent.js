@@ -14,7 +14,7 @@ export class Test extends Component  {
                 textIndex: this.state.textIndex + 1,
                 paragraphIndex: this.state.paragraphIndex + 1
               });
-            }, 4000);
+            }, 2000);
             setInterval(() => {
               this.setState({
                 textFastIndex: this.state.textFastIndex + 1
@@ -24,7 +24,7 @@ export class Test extends Component  {
     render() {
         return (
         <React.Fragment>
-            <section id={this.props.isOpen ? "nohossik" : "hossik" }>
+            <section id={this.props.isOpen ? "hossik" :  "nohossik"}>
             <ReactTextTransition
                 text= {this.props.isOpen ? secondtexts[this.state.textIndex % secondtexts.length] : texts[this.state.textIndex % texts.length] }
                 spring={presets.gentle}

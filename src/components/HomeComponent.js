@@ -24,13 +24,15 @@ export class Home extends Component {
   render(){
   return (
       <div>    
-        <Typist 
-          className="TypistExample-header "
+        {this.props.isOpen ? (<Typist 
+          className="TypistExample-header"
           avgTypingDelay={40}
           startDelay={2000}
           onTypingDone={this.onHeaderTyped}>
             Its Me Typist will animate any text 
-        </Typist>
+        </Typist>)
+        : null 
+        }
           
         <div >
           {this.state.renderMsg ? (
@@ -48,9 +50,9 @@ export class Home extends Component {
               <Typist.Backspace count={5} delay={1000} />
               <Typist.Delay ms={750} />
               space
-              <Typist.Delay ms={1250} />
+              <Typist.Delay ms={1250} /> 
               <br />
-              <span >* <Link className="flash" to={"/aboutMe"} >docs</Link></span>
+              <span >for more information < Link style={{color:'#FFDC00'}}>*About me <span className="flash" to={"/aboutMe"} ><img id="man" alt="hossik" src="../assets/hossik.jpeg" /></span></Link></span>
               
               {''}
             </Typist>

@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 const BackgroundVideo = () => {
     const videoSource = "../assets/videoCover.mp4"
     return (
-        <section className="landing">
+        <section className="landing" >
         
         <video autoPlay="autoplay" loop="loop" muted id="videoBG">
                 <source src={videoSource} type="video/mp4" />

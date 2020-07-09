@@ -1,5 +1,5 @@
-$bg-color: #333;
-$bl-color: #22BAD9;
+$tc-color: rgb(255, 255, 255);
+$bl-color: #FFDC00;
 
 .TypistExample {   
   a {
@@ -15,23 +15,20 @@ $bl-color: #22BAD9;
     text-align: center;
     font-size: 1.5em;
     cursor: pointer;
-    color: $bl-color;
-
+    color: $tc-color;
   }
   &-message {
-  display : flex;
-  flex-direction :column;
-  justify-content : center;
-  align-items : center;
-  color: hotpink;
- 
+  
+  color: $tc-color;
+  margin: auto;
+
     .flash {
       color: $bl-color;
       font-weight: bold;
       text-decoration: underline;
       margin: auto;
       animation-name: blinker;
-      animation-duration: 0.7s;
+      animation-duration: 1.7s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       @keyframes blinker {
