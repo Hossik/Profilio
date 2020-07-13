@@ -11,24 +11,16 @@
   width: 10%;
 }
 #card{
-  width:105rem;
-  height: 63rem;
-  background:rgb(0, 0, 0);
-  background-repeat: no-repeat;
-  background-size: 161rem 90rem;
-  background-position: center;
-  border-radius: 5% ;
+  width:65rem;
+  height: 40rem;
+  background:rgba(46,46,46, 0.9) ;
+  border-radius: 35px ;
   color :white;
   font-size: 3.5rem;
   margin-bottom: 30%;
+  
 }
-@media (min-width: 1020px) {
-  #card{
-    width:105rem;
-    height: 69rem;
-  }
 
-}
 
 .textCard{
   color :white;
@@ -38,10 +30,6 @@
   margin-left: 10%;
 }
 
-#zir{
-  position: absolute;
-  font-size: 80rem;
-}
 
 .textCardtwo{
   color :white;
@@ -54,7 +42,7 @@
 
 #hossik{
     font-size:150% ;
-    color: #FFDC00;
+    color: rgb(233, 25, 25);
     font-weight: bold;
     z-index: -1;
     
@@ -62,24 +50,21 @@
 
 #nohossik{
   font-size: 230%;
-    color: rgb(233, 25, 25);
+    color: rgb(255, 220, 0);
     font-weight: bold;
     z-index: -1;
 }
-#start{
-  background-color: brown;
-  width: 150%;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding-right: 50%;
-}
+
 .btn-circle.btn-xl {
-  width: 160px;
-  height: 90px;
+  width: 15rem;
+  height: 5rem;
   padding: 10px 16px;
   border-radius: 35px;
   font-size: 24px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 350ms;
 }
 
 .tn{
@@ -145,43 +130,15 @@ section.route-section {
   position: absolute; 
 }
 
-@media (min-aspect-ratio: 16/9) {
-  #videoBG {
-      width:100%;
-      height: auto;
-  }
-  
-}
-@media (max-aspect-ratio: 16/9) {
-  #videoBG { 
-    width:auto;
-    height: 100%;
-  }
-}
 
-@media (min-width: 767px) {
+
+
+/* @media (max-width: 767px) {
+  
+
   .footer{
     position: absolute;
-    margin-top: 90%;
-    width: 95%;
-  }
-}
-@media (max-width: 767px) {
-  .textCardtwo{
-    color :white;
-    width: 100%;
-    font-size:1.9rem;
-    margin-top: 9rem;
-    padding: 0rem;
-  }
-  #zir{
-    margin-top: 1.5rem;
-    font-size: 2rem;
-    padding: 0rem;
-  }
-  .footer{
-    position: absolute;
-    
+    margin-top: 220%;
     width: 95%;
   }
   .textCard{
@@ -190,38 +147,25 @@ section.route-section {
     text-align: center;
     margin-left: 0%;
   }
-#card{
-  width:20rem;
-  height: 50rem;
-  font-size: 1.5rem;
-}
-.footer{
-  margin-top: 220%;
+  #card{
+    width:20rem;
+    height: 50rem;
+    font-size: 1.5rem;
   }
-}
+  } */
 
-@media only screen and (max-width: 769px) and (min-width: 767px)  {
+/* @media only screen and (max-width: 769px) and (min-width: 767px)  {
   .footer{ 
     margin-top: 120%;
   }
-  #zir{
-    width: 50rem;
-    margin-left: 0rem;
-  }
+ 
   .textCard{
     margin-left: -8%; 
   }
 }
-@media only screen and (max-width: 1025px) and (min-width: 768px)  {
-  #zir{
-    margin-top: 3rem;
-    font-size: 2.5rem;
-    margin-left: 0rem;
-  }}
+
 @media  (max-device-width: 480px) and (orientation: landscape) {
- #zir{
-  margin-left: 0rem;
- }
+
   .footer{
     position: absolute;
     margin-top: 120%;
@@ -248,14 +192,7 @@ section.route-section {
   .footer{   
     margin-top: 120%;
   }
-  #zir{  
-  width: 50rem;
-  margin-top: 3rem;
-  font-size: 2.5rem;
-  padding: 2rem;
-  text-align: center;
-  margin-left: 0rem;
-  }
+
 }
 
 @media  (min-device-width: 991px) and (orientation: landscape) {
@@ -271,37 +208,18 @@ section.route-section {
   .footer{
     margin-top: 80%;
   }
-}
+} */
 
 #videoBG {
   position:fixed;
     z-index: -1;
 }
 
-.dark-overlay {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(184, 176, 176, 0.5) ;
-  height: 170vh;
-}
 
-.landing{
-  position: relative;
-  height: 100vh;
-}
 
-.landing-inner{
-  color: #fff;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin: auto;
-  align-items: center;
-  text-align: center;
-}
+
+
+
 
 #head{
   position: relative;
@@ -313,3 +231,65 @@ section.route-section {
   width: 4rem;
   border-radius: 35px;
 }
+
+/* This fires as soon as the element enters the dorm */
+.list-transition-enter,
+.list-transition-appear {
+  /*We give the list the initial dimension of the list button*/
+   width: 15rem;
+   transition: all 900ms;
+
+  max-height: 5rem;
+  bottom: 5.5rem;
+  left: 5rem;
+  color: transparent;
+  transform:   scale(1) 
+  translateY(0)
+}
+/* This is where we can add the transition*/
+.list-transition-enter-active,
+.list-transition-appear-active {
+  width:65rem;
+  max-height:  40rem;
+  transition: all 900ms;
+  border-radius: 55px;
+  bottom: 5.5rem;
+  left: 5rem;
+  transform: scale(1) ;
+
+}
+
+/* This fires as soon as the this.state.showList is false */
+.list-transition-exit {
+  width:65rem;
+  bottom: 5.5rem;
+  left: 3rem;
+  transform:   scale(1) ;
+  max-height: 40rem;
+  transition: all 900ms;
+}
+/* fires as element leaves the DOM*/
+.list-transition-exit-active {
+  width: 15rem;
+  bottom: 5.5rem; 
+   max-height: 5rem;
+   transform:   scale(1) translateY(0);
+  color: transparent;
+  transition: all 900ms;
+  border-radius: 55px;
+  
+
+}
+
+.list-body {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+
+
+
+

@@ -2,7 +2,7 @@ import React from 'react';
 import Main from './Main';
 import { BrowserRouter } from 'react-router-dom';
 
-const BackgroundVideo = () => {
+export const BackgroundVideo = () => {
     const videoSource = "../assets/videoCover.mp4"
     return (
         <section className="landing" >

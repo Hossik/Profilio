@@ -1,13 +1,24 @@
 import React from 'react';
-
-import BackgroundVideo from './components/Background';
-
+import { GlobalStyles } from './global';
+import { Cover } from './components';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 import './App.css';
+import { theme } from './theme';
 
 function App() {
   return (
-
-    <BackgroundVideo  />
+  
+<ThemeProvider  theme={theme}>
+  <> 
+  <BrowserRouter >
+  <GlobalStyles />
+  <section className="landing" >
+    <Cover />
+    </section>
+  </BrowserRouter>
+  </>
+</ThemeProvider>
 
   );
 }

@@ -24,15 +24,13 @@ export class Home extends Component {
   render(){
   return (
       <div>    
-        {this.props.isOpen ? (<Typist 
+        <Typist 
           className="TypistExample-header"
           avgTypingDelay={40}
           startDelay={2000}
           onTypingDone={this.onHeaderTyped}>
             Its Me Typist will animate any text 
-        </Typist>)
-        : null 
-        }
+        </Typist>
           
         <div >
           {this.state.renderMsg ? (
