@@ -3,7 +3,7 @@ export const StyledCover = styled.div`
 
 position: relative;
 
-img{
+#img{
 height: 72.2rem;
  position: absolute;
 width:100%;
@@ -57,6 +57,18 @@ width:100%;
       50% { background: linear-gradient( rgba(240, 187, 187, 0.9) 20%, rgba(51, 48, 48, 0.5)100% ); }
       60% { background-color: rgba(51, 48, 48, 0.5) ; }
     }
+}
+#rabbit{
+  margin-top:45%;
+  font-size: 3rem;
+}
+#sexy{
+  margin-top:35%;
+  font-size: 4rem;
+}
+#owl{
+  margin-top:35%;
+  font-size: 4rem;
 }
 `;
 
