@@ -2,14 +2,21 @@ import { StyledCover } from './Cover.styled';
 import Main from '../Main';
 import React, { Component } from 'react';
 import {baseURL} from '../baseURL';
+import { MDBBtn} from 'mdbreact';
+
 
 export class Cover extends Component {
 
     constructor(props) {
         super(props);
         this.switchImage = this.switchImage.bind(this);
+        this.pause = this.pause.bind(this);
+        this.backward = this.backward.bind(this);
+
         this.state = {
           currentImage: 0,
+          play:false,
+          back:false,
           images: [
   '/assets/photo1.png', 
   '/assets/photo2.png', 
@@ -309,25 +316,296 @@ export class Cover extends Component {
    '/assets/photo298.png', 
    '/assets/photo299.png', 
    '/assets/photo300.png',
+   '/assets/photo301.png', 
+  '/assets/photo302.png', 
+  '/assets/photo303.png', 
+  '/assets/photo304.png', 
+  '/assets/photo305.png', 
+  '/assets/photo306.png', 
+  '/assets/photo307.png', 
+  '/assets/photo308.png', 
+  '/assets/photo309.png', 
+   '/assets/photo310.png', 
+   '/assets/photo311.png', 
+   '/assets/photo312.png', 
+   '/assets/photo313.png', 
+   '/assets/photo314.png', 
+   '/assets/photo315.png', 
+   '/assets/photo316.png', 
+   '/assets/photo317.png',
+   '/assets/photo318.png', 
+   '/assets/photo319.png', 
+   '/assets/photo320.png',
+   '/assets/photo321.png', 
+  '/assets/photo322.png', 
+  '/assets/photo323.png', 
+  '/assets/photo324.png', 
+  '/assets/photo325.png', 
+  '/assets/photo326.png', 
+  '/assets/photo327.png', 
+  '/assets/photo328.png', 
+  '/assets/photo329.png', 
+   '/assets/photo330.png', 
+   '/assets/photo331.png', 
+   '/assets/photo332.png', 
+   '/assets/photo333.png', 
+   '/assets/photo334.png', 
+   '/assets/photo335.png', 
+   '/assets/photo336.png', 
+   '/assets/photo337.png',
+   '/assets/photo338.png', 
+   '/assets/photo339.png',
+   '/assets/photo340.png',
+   '/assets/photo341.png', 
+  '/assets/photo342.png', 
+  '/assets/photo343.png', 
+  '/assets/photo344.png', 
+  '/assets/photo345.png', 
+  '/assets/photo346.png', 
+  '/assets/photo347.png', 
+  '/assets/photo348.png', 
+  '/assets/photo349.png', 
+   '/assets/photo350.png', 
+   '/assets/photo351.png', 
+   '/assets/photo352.png', 
+   '/assets/photo353.png', 
+   '/assets/photo354.png', 
+   '/assets/photo355.png', 
+   '/assets/photo356.png', 
+   '/assets/photo357.png',
+   '/assets/photo358.png', 
+   '/assets/photo359.png', 
+   '/assets/photo360.png',
+   '/assets/photo361.png', 
+  '/assets/photo362.png', 
+  '/assets/photo363.png', 
+  '/assets/photo364.png', 
+  '/assets/photo365.png', 
+  '/assets/photo366.png', 
+  '/assets/photo367.png', 
+  '/assets/photo368.png', 
+  '/assets/photo369.png', 
+   '/assets/photo370.png', 
+   '/assets/photo371.png', 
+   '/assets/photo372.png', 
+   '/assets/photo373.png', 
+   '/assets/photo374.png', 
+   '/assets/photo375.png', 
+   '/assets/photo376.png', 
+   '/assets/photo377.png',
+   '/assets/photo378.png', 
+   '/assets/photo379.png',
+   '/assets/photo380.png', 
+   '/assets/photo381.png', 
+  '/assets/photo382.png', 
+  '/assets/photo283.png', 
+  '/assets/photo384.png', 
+  '/assets/photo385.png', 
+  '/assets/photo386.png', 
+  '/assets/photo387.png', 
+  '/assets/photo388.png', 
+  '/assets/photo389.png', 
+   '/assets/photo390.png', 
+   '/assets/photo391.png', 
+   '/assets/photo392.png', 
+   '/assets/photo393.png', 
+   '/assets/photo394.png', 
+   '/assets/photo395.png', 
+   '/assets/photo396.png', 
+   '/assets/photo397.png',
+   '/assets/photo398.png', 
+   '/assets/photo399.png', 
+   '/assets/photo400.png',
+   '/assets/photo401.png', 
+  '/assets/photo402.png', 
+  '/assets/photo403.png', 
+  '/assets/photo404.png', 
+  '/assets/photo405.png', 
+  '/assets/photo406.png', 
+  '/assets/photo407.png', 
+  '/assets/photo408.png', 
+  '/assets/photo409.png', 
+   '/assets/photo410.png', 
+   '/assets/photo411.png', 
+   '/assets/photo412.png', 
+   '/assets/photo413.png', 
+   '/assets/photo414.png', 
+   '/assets/photo415.png', 
+   '/assets/photo416.png', 
+   '/assets/photo417.png',
+   '/assets/photo418.png', 
+   '/assets/photo419.png', 
+   '/assets/photo420.png',
+   '/assets/photo421.png', 
+  '/assets/photo422.png', 
+  '/assets/photo423.png', 
+  '/assets/photo424.png', 
+  '/assets/photo425.png', 
+  '/assets/photo426.png', 
+  '/assets/photo427.png', 
+  '/assets/photo428.png', 
+  '/assets/photo429.png', 
+   '/assets/photo430.png', 
+   '/assets/photo431.png', 
+   '/assets/photo434.png', 
+   '/assets/photo433.png', 
+   '/assets/photo434.png', 
+   '/assets/photo435.png', 
+   '/assets/photo436.png', 
+   '/assets/photo437.png',
+   '/assets/photo438.png', 
+   '/assets/photo439.png',
+   '/assets/photo440.png',
+   '/assets/photo441.png', 
+  '/assets/photo442.png', 
+  '/assets/photo443.png', 
+  '/assets/photo444.png', 
+  '/assets/photo445.png', 
+  '/assets/photo446.png', 
+  '/assets/photo447.png', 
+  '/assets/photo448.png', 
+  '/assets/photo449.png', 
+   '/assets/photo450.png', 
+   '/assets/photo451.png', 
+   '/assets/photo452.png', 
+   '/assets/photo453.png', 
+   '/assets/photo454.png', 
+   '/assets/photo455.png', 
+   '/assets/photo456.png', 
+   '/assets/photo457.png',
+   '/assets/photo458.png', 
+   '/assets/photo459.png', 
+   '/assets/photo460.png',
+   '/assets/photo461.png', 
+  '/assets/photo462.png', 
+  '/assets/photo463.png', 
+  '/assets/photo464.png', 
+  '/assets/photo465.png', 
+  '/assets/photo466.png', 
+  '/assets/photo467.png', 
+  '/assets/photo468.png', 
+  '/assets/photo469.png', 
+   '/assets/photo470.png', 
+   '/assets/photo471.png', 
+   '/assets/photo472.png', 
+   '/assets/photo473.png', 
+   '/assets/photo474.png', 
+   '/assets/photo475.png', 
+   '/assets/photo476.png', 
+   '/assets/photo477.png',
+   '/assets/photo478.png', 
+   '/assets/photo479.png',
+   '/assets/photo480.png', 
+   '/assets/photo481.png', 
+  '/assets/photo482.png', 
+  '/assets/photo483.png', 
+  '/assets/photo484.png', 
+  '/assets/photo485.png', 
+  '/assets/photo486.png', 
+  '/assets/photo487.png', 
+  '/assets/photo488.png', 
+  '/assets/photo489.png', 
+   '/assets/photo490.png', 
+   '/assets/photo491.png', 
+   '/assets/photo492.png', 
+   '/assets/photo493.png', 
+   '/assets/photo494.png', 
+   '/assets/photo495.png', 
+   '/assets/photo496.png', 
+   '/assets/photo497.png',
+   '/assets/photo498.png', 
+   '/assets/photo499.png', 
+   '/assets/photo500.png',
+   '/assets/photo401.png', 
+  '/assets/photo502.png', 
+  '/assets/photo503.png', 
+  '/assets/photo504.png', 
+  '/assets/photo505.png', 
+  '/assets/photo506.png', 
+  '/assets/photo507.png', 
+  '/assets/photo508.png', 
+  '/assets/photo509.png', 
+   '/assets/photo510.png', 
+   '/assets/photo511.png', 
+   '/assets/photo512.png', 
+   '/assets/photo513.png', 
+   '/assets/photo514.png', 
+   '/assets/photo515.png', 
+   '/assets/photo516.png', 
+   '/assets/photo517.png',
+   '/assets/photo518.png', 
+   '/assets/photo519.png', 
+   '/assets/photo520.png',
+   '/assets/photo521.png', 
+  '/assets/photo522.png', 
+  '/assets/photo523.png', 
+  '/assets/photo524.png', 
+  '/assets/photo525.png', 
+  '/assets/photo526.png', 
+  '/assets/photo527.png', 
+  '/assets/photo528.png', 
+  '/assets/photo529.png', 
+   '/assets/photo530.png', 
+   '/assets/photo531.png', 
+   '/assets/photo534.png', 
+   '/assets/photo533.png', 
+   '/assets/photo534.png', 
+   '/assets/photo535.png', 
+   '/assets/photo536.png', 
+   '/assets/photo537.png',
+   '/assets/photo538.png', 
+   '/assets/photo539.png',
+   '/assets/photo540.png',
+   '/assets/photo541.png', 
+  '/assets/photo542.png', 
+  '/assets/photo543.png',
           ]
         };
       }
-    
+      addDefaultSrc(ev){
+        ev.target.src = baseURL+'/assets/photo1.png'
+      }
       switchImage() {
-        if (this.state.currentImage < this.state.images.length - 1) {
+        if (this.state.play === true){
+          if (this.state.back === true){
+            if (this.state.currentImage > 0 ) {
+              this.setState({
+                currentImage: this.state.currentImage - 1
+              })
+            } else {
+              this.setState({
+                currentImage:  this.state.images.length - 1
+              });
+            }
+          }
+          else{
+        if (this.state.currentImage < this.state.images.length - 1 ) {
           this.setState({
             currentImage: this.state.currentImage + 1
-          });
+          })
         } else {
           this.setState({
             currentImage: 0
           });
         }
         return this.currentImage;
-      }
-    
+      }}
+    else{
+      return this.currentImage;
+    }}
+   
+    pause = () => {
+  this.setState(state => ({
+    play: !state.play
+  }))
+  }
+  backward = () => {
+    this.setState(state => ({
+      back: !state.back
+    }))
+  }
       componentDidMount() {
-        setInterval(this.switchImage, 250);
+        setInterval(this.switchImage, 600);
       }
 
 
@@ -337,17 +615,18 @@ export class Cover extends Component {
             <StyledCover>
         <img src={baseURL+this.state.images[this.state.currentImage]} alt="img" loading="lazy"  />
         <div className="dark-overlay ">
-          
+        <div className="scroll">
+          <div id="welcome">
+            Wolcome-{'    '}<span>{'    '}To-</span>{'    '}<span>{'    '}My-{'    '}</span>{'    '}<span>{'    '}Page{'    '}</span>
+            <span className="first">Wolcome-{'    '}</span><span className="first">{'    '}To-</span>{'    '}<span className="first">{'    '}My-{'    '}</span>{'    '}<span className="first">{'    '}Page{'    '}</span>
+            <span>Wolcome-{'    '}</span><span>{'    '}To-</span>{'    '}<span>{'    '}My-{'    '}</span>{'    '}<span>{'    '}Page{'    '}</span>
+          </div>
+        </div>
+        <div id="controler">
+        <MDBBtn id="play" color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}
+      onClick={this.pause}>{this.state.play?<i style={{margin: 'auto'}}id="nohossik" class="fas fa-pause-circle"></i>:<i id="hossik" style={{margin: 'auto'}} class="fas fa-play-circle"></i>}</MDBBtn> { }
+      <MDBBtn id="back" color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.backward}>{this.state.back?<i style={{margin: 'auto'}}id="nohossik" class="fas fa-forward"></i>:<i id="hossik" style={{margin: 'auto'}} class="fas fa-backward"></i>}</MDBBtn></div>
         <div className ="landing-inner">
-         
-          { 5<this.state.currentImage && this.state.currentImage<15 ?   
-          <span role="img" aria-label="rabbit" id="rabbit">&#x1f407; &#x1f407;</span> : <span></span>}
-          { 48<this.state.currentImage && this.state.currentImage<58 ?   
-          <span role="img" aria-label="owl" id="owl">&#x1f989;
-          </span> : <span></span>}
-          { 60<this.state.currentImage && this.state.currentImage<70 ?   
-          <span role="img" aria-label="sexy" id="sexy">&#x1f46f; &#x200d; &#x2642; &#xfe0f;
-          </span> : <span></span>}
           
         <div className='inner'>
           
