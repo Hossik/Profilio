@@ -10,7 +10,7 @@ const Menu = ({ open }) => {
         About me
       </Link>
       <Link  className="links" to="/tools">
-        <span role="img" aria-label="price">&#x1f4b8;</span>
+      <i class="fas fa-tools"></i>
         Tools
         </Link>
         <Link  className="links" to="/contacts">

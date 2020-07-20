@@ -32,7 +32,7 @@ position: relative;
   background-color:black;
   height :20vh;
 }
-img{
+#bg{
 
 position: absolute;
 width:100vw; 
@@ -287,6 +287,23 @@ p{
     100% { opacity: 1.0; }
   }
 }
-
+.helpfooter-enter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.helpfooter-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 300ms ease-in;
+}
+.helpfooter-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.helpfooter-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
+    transition: all 500ms ease-in-out;
+}
 `;
 

@@ -135,8 +135,8 @@ pause = () => {
         <StyledCover>
         
         {this.state.play ? 
-      
-      <div className='player-wrapper'>
+        
+        <div className='player-wrapper'>
         <ReactPlayer
        onPlay={this.ready}
        style={{visibility: this.state.ready ? 'visible' : 'hidden' }}
@@ -154,10 +154,22 @@ pause = () => {
         <div  style={{display : this.state.ready ?  'none' :'block' ,marginTop : "50vh" ,}}> <WindMillLoading	  size="large" color="rgb(255, 220, 0)"/>
       </div>
       </div>
-:<img src={"https://raw.githubusercontent.com/Hossik/Profilio/master/public/assets/photo390.png"} alt="img"/>
+      
+      :
+      
+      <img src={"https://raw.githubusercontent.com/Hossik/Profilio/master/public/assets/photo390.png"} alt="img"/>
+      
+
        }
        
         <div className="dark-overlay ">
+          <CSSTransition
+        in={this.state.play}
+        timeout={300}
+        classNames="helpfooter"
+        unmountOnExit
+        appear     
+      >
           <div id="mainfooter">
             <ExternalLink className="mainfooterItem" href="https://example.com">
               <span>Visit the site</span>
@@ -169,6 +181,7 @@ pause = () => {
               <span>Visit the site</span>
            </ExternalLink>
           </div>
+          </CSSTransition>
         <div className="scroll">
           <div id="welcome">
             Wolcome-{'    '}<span>{'    '}To-</span>{'    '}<span>{'    '}My-{'    '}</span>{'    '}<span>{'    '}Page{'    '}</span>
@@ -186,9 +199,17 @@ pause = () => {
         <div id="controler">
         <MDBBtn id="play" color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}
       onClick={this.play}>{this.state.play?<i id="hossik" class="fas fa-play-circle"></i>:<i id="nohossik" class="far fa-stop-circle"></i>}</MDBBtn> { }
-      <MDBBtn id="back" color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.switchImage}><i id="hossik"  class="fas fa-forward"></i></MDBBtn>
+      <CSSTransition
+        in={this.state.play}
+        timeout={300}
+        classNames="helpplayer"
+        unmountOnExit
+        appear     
+      >
+         <div><MDBBtn id="back" color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.switchImage}><i id="hossik"  class="fas fa-forward"></i></MDBBtn>
       <MDBBtn  color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.muted}>{this.state.muted?<i id="nohossik" class="fas fa-volume-up"></i>:<i id="hossik"  class="fas fa-volume-mute"></i>}</MDBBtn>
-      <MDBBtn  color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.pause}>{this.state.pause?<i id="nohossik" class="fas fa-pause-circle"></i>:<i id="hossik"  class="fas fa-play-circle"></i>}</MDBBtn>
+      <MDBBtn  color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.pause}>{this.state.pause?<i id="nohossik" class="fas fa-pause-circle"></i>:<i id="hossik"  class="fas fa-play-circle"></i>}</MDBBtn> </div>
+      </CSSTransition>
      </div>
       </CSSTransition>
       <CSSTransition
