@@ -51,7 +51,7 @@ export class Home extends Component {
               space
               <Typist.Delay ms={1250} /> 
               <br />
-              <span >for more information < Link style={{color:'#FFDC00'}}>*About me <span className="flash" to={"/aboutMe"} ><img id="man" alt="hossik" src="../assets/hossik.jpeg" /></span></Link></span>
+              <span >for more information < Link style={{color:'#FFDC00'}}>*About me <span className="flash" to={"/aboutMe"} ><img id="man" alt="hossik" src="https://raw.githubusercontent.com/Hossik/Profilio/master/public/assets/hossik.jpeg" /></span></Link></span>
               
               {''}
             </Typist>

@@ -6,7 +6,7 @@ const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
       <Link className="links" to="/aboutMe">
-        <img id="me" alt="hossik" src="../assets/hossik.jpeg" /><br/>
+        <img id="me" alt="hossik" src="https://raw.githubusercontent.com/Hossik/Profilio/master/public/assets/hossik.jpeg" /><br/>
         About me
       </Link>
       <Link  className="links" to="/tools">
