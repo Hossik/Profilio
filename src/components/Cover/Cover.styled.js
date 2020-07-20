@@ -2,10 +2,29 @@ import styled from 'styled-components';
 export const StyledCover = styled.div`
 
 position: relative;
+.wrapper-ant-design {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  transition: margin .5s;
+  background:black;
+  background-image:url("https://www.kindpng.com/picc/b/108/1084703.png");
+  background-repeat: no-repeat;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+}
+
+
+
 .player-wrapper {
-  position: relative;
+  position: absolute;
   margin-bottom: -5%;
 
+}
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .mainfooterItem{
   color: rgb(255, 220, 0);
@@ -19,11 +38,7 @@ position: relative;
   color: rgb(233, 25, 25);
   text-decoration: inherit;
 }
-.react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+
 #mainfooter{
   position: fixed;
   bottom: 0;
