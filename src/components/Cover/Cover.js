@@ -153,8 +153,7 @@ pause = () => {
           muted={this.state.muted}
           playing={this.state.pause}
         />
-        <div  style={{display : this.state.ready ?  'none' :'block' ,marginTop : "50vh" ,}}> <WindMillLoading	  size="large" color="rgb(255, 220, 0)"/>
-      </div>
+       
       </div>
 
        }
