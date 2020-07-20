@@ -142,7 +142,6 @@ pause = () => {
       <div className='player-wrapper'>
         <ReactPlayer
        onPlay={this.ready}
-       style={{visibility: this.state.ready ? 'visible' : 'hidden' }}
           className='react-player'
           onError={this.switchImage}
           onEnded={this.switchImage}
