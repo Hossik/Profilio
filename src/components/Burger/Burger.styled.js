@@ -17,6 +17,8 @@ export const StyledBurger = styled.button`
     width: 2rem;
     height: 2rem;
   }
+  
+ 
   &:focus {
     outline: none;
   }
@@ -46,5 +48,6 @@ export const StyledBurger = styled.button`
       width: 2rem;
       height: 0.25rem;
     }
+    
   }
 `;

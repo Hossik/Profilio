@@ -4,16 +4,16 @@ import { StyledMenu } from './Menu.styled';
 import { Link } from 'react-router-dom';
 const Menu = ({ open }) => {
   return (
-    <StyledMenu open={open} >
-      <Link  to="/aboutMe" >
-        <img id="man" alt="hossik" src="../assets/hossik.jpeg"  />{"  "}
-        <span >About me</span>
+    <StyledMenu open={open}>
+      <Link className="links" to="/aboutMe">
+        <img id="me" alt="hossik" src="../assets/hossik.jpeg" /><br/>
+        About me
       </Link>
-      <Link  to="/tools">
+      <Link  className="links" to="/tools">
         <span role="img" aria-label="price">&#x1f4b8;</span>
-        Pricing
+        Tools
         </Link>
-        <Link  to="/contacts">
+        <Link  className="links" to="/contacts">
         <span role="img" aria-label="contact">&#x1f4e9;</span>
         Contact
         </Link>

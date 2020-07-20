@@ -23,7 +23,8 @@ export class Home extends Component {
   }
   render(){
   return (
-      <div>    
+      <div> 
+           
         <Typist 
           className="TypistExample-header"
           avgTypingDelay={40}
@@ -56,6 +57,7 @@ export class Home extends Component {
             </Typist>
           ) : null }
         </div>
+        
       </div>
     )
   }

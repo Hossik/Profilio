@@ -11,7 +11,7 @@
   width: 10%;
 }
 #card{
-  width:65rem;
+  width:65vw;
   height: 77vh;
   background:rgba(41,41,41, 0.9) ;
   border-radius: 35px ;
@@ -41,15 +41,14 @@
 }
 
 #hossik{
-    font-size:150% ;
+    font-size:3vmin ;
     color: rgb(233, 25, 25);
     font-weight: bold;
-    z-index: -1;
-    
+    z-index: -1;   
 }
 
 #nohossik{
-  font-size: 230%;
+  font-size: 4.5vmin;
     color: rgb(255, 220, 0);
     font-weight: bold;
     z-index: -1;
@@ -57,8 +56,8 @@
 
 .btn-circle.btn-xl {
   top: 2%;
-  width: 15rem;
-  height: 5rem;
+  width: 15vw;
+  height: 10vh;
   padding: 10px 16px;
   border-radius: 35px;
   font-size: 24px;
@@ -211,16 +210,6 @@ section.route-section {
   }
 } */
 
-#videoBG {
-  position:fixed;
-    z-index: -1;
-}
-
-
-
-
-
-
 
 #head{
   position: relative;
@@ -228,11 +217,41 @@ section.route-section {
 }
 
 #man{
-  height: 4rem;
-  width: 4rem;
+  height: 8vmin;
+  width: 8vmin;
   border-radius: 35px;
 }
+#me{
+  height: 8vmin;
+  width: 8vmin;
+  border-radius: 35px;
+  margin-right: 100%;
+}
+.intro-transition-enter{
+  opacity: 0.05;
+  
+}
 
+.intro-transition-enter-active{
+  opacity: 1;
+  
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.intro-transition-exit {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.intro-transition-exit-active {
+  opacity: 0.05;
+  
+  transition: all 300ms ease-in-out;
+}
 /* This fires as soon as the element enters the dorm */
 .list-transition-enter,
 .list-transition-appear {
@@ -278,9 +297,60 @@ section.route-section {
   color: transparent;
   transition: all 900ms;
   border-radius: 55px;
-  
+}
+
+
+
+@media (max-width: 767px){
+  /* This fires as soon as the element enters the dorm */
+.list-transition-enter,
+.list-transition-appear {
+  /*We give the list the initial dimension of the list button*/
+   width: 7.5rem;
+   transition: all 900ms;
+
+  max-height: 2.5rem;
+  bottom: 4.75rem;
+  left: 2.5rem;
+  color: transparent;
+  transform:   scale(1) 
+  translateY(0)
+}
+/* This is where we can add the transition*/
+.list-transition-enter-active,
+.list-transition-appear-active {
+  width:32.5rem;
+  max-height:  20rem;
+  transition: all 900ms;
+  border-radius: 22.5px;
+  bottom: 2.75rem;
+  left: 2.5rem;
+  transform: scale(1) ;
 
 }
+
+/* This fires as soon as the this.state.showList is false */
+.list-transition-exit {
+  width:32.5rem;
+  bottom: 2.75rem;
+  left: 1.5rem;
+  transform:   scale(1) ;
+  max-height: 20rem;
+  transition: all 900ms;
+}
+/* fires as element leaves the DOM*/
+.list-transition-exit-active {
+  width: 7.5rem;
+  bottom: 2.75rem; 
+   max-height: 2.5rem;
+   transform:   scale(1) translateY(0);
+  color: transparent;
+  transition: all 900ms;
+  border-radius: 27.5px;
+}
+}
+
+
 
 .list-body {
   position: relative;
@@ -291,6 +361,104 @@ section.route-section {
 
 
 
+
+.footer{
+  font-size: 6vmin;
+  width: 95%;
+ 
+}
+.footerbox{
+  border-top: 4px dotted rgb(255, 220, 0);
+  font-size: 6vmin;
+  width: 100%;
+  margin-top: 65vh;
+}
+@media (max-width: 1024px) {
+  .footerbox{
+    border-top: 4px dotted rgb(255, 220, 0);
+    margin-top: 60vh;
+    line-height: 5vh;
+  }
+  .links{
+    display: block;
+  }
+}
+@media  (max-device-width: 1024px) and (orientation: landscape) {
+#burger{
+  width: 2rem;
+    height: 2rem;
+}
+#burger div {
+  width: 2rem;
+      height: 0.25rem;
+}
+  .links{
+    display: inline;
+    text-align: center;
+  }
+  .footerbox{
+    line-height: 8vh;
+  }
+}
+
+.alertup-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.alertup-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 300ms ease-in;
+}
+.alertup-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.alertup-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+    transition: all 500ms ease-in-out;
+}
+
+
+
+.alertdown-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.alertdown-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 300ms ease-in;
+}
+.alertdown-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.alertdown-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+    transition: all 500ms ease-in-out;
+}
+
+.helpplayer-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.helpplayer-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 300ms ease-in;
+}
+.helpplayer-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.helpplayer-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
+    transition: all 500ms ease-in-out;
+}
 
 
 

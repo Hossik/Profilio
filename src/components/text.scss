@@ -11,14 +11,24 @@ $bl-color: #FFDC00;
     }
   }
   &-header {
-    margin-top: 4%;
+    margin-top: 9vh;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 10vmin;
     cursor: pointer;
     color: $tc-color;
+    line-height: 8vh;
+    @media (max-width: 1024px) {
+      margin-top: 6vh;
+      line-height: 6vh;
+    }
+    @media  (max-device-width: 1024px) and (orientation: landscape) {
+      margin-top: 8vh;
+      line-height: 8vh;
+    }
   }
   &-message {
-  
+  margin-top: 8vh;
+  font-size: 5vmin;
   color: $tc-color;
   margin: auto;
 

@@ -17,22 +17,27 @@ export const StyledMenu = styled.nav`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
   }
-  @media only screen and (max-width:1025px ) and (min-width:1020px )  {
-    height: 80vh;  
+  span{
+    justify-content: start;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      justify-content: start;
+
+    }
   }
-  a {
-    font-size: 2rem;
+  .links {
+    font-size: 5vmin;
     text-transform: uppercase;
-    padding: 2rem 0;
+    padding: 2vh 0;
     font-weight: bold;
-    letter-spacing: 0.5rem;
+    
     color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
     transition: color 0.3s linear;
     
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 1.5rem;
-      text-align: center;
+      
+      justify-content: start;
     }
     &:hover {
         color: rgb(233, 212, 25);

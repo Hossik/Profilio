@@ -17,10 +17,12 @@ class Main extends Component {
     super(props);
     this.state = {
       collapseID: "",
-      highlightedHobby: false
+      highlightedHobby: false,
+      tbn:false
 
     };
   };
+
   listSwitch = () => {
     this.setState(state => ({
       highlightedHobby: !state.highlightedHobby
@@ -31,19 +33,32 @@ class Main extends Component {
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
     }));
   }
-  
+  remove = () => {
+    clearInterval(this.intervalID)
+  }
+  componentDidMount() {
+        
+            this.intervalID = setInterval(() => {
+            this.setState(state =>({
+                tbn : !state.tbn
+            }));
+            }, 8500);
+            
+            setInterval (this.remove, 10000)
+            
+        }
 
   render() {
-    
+   
   return (
       
   <React.Fragment className="container">
       
-    <MDBBtn className= " btn  btn-circle btn-xl" color="elegant"
+    {this.state.tbn ? <MDBBtn className= " btn  btn-circle btn-xl" color="elegant"
       onClick={this.toggleCollapse("basicCollapse")}>
       <i> <Test
       isOpen={this.state.collapseID}/></i>    
-    </MDBBtn>
+    </MDBBtn> : <div></div>}
     <CSSTransition
           in={this.state.collapseID}
           timeout={300}
@@ -74,7 +89,9 @@ class Main extends Component {
           </CSSTransition>
           </TransitionGroup>
           </div>
-          <Footer />
+          <div className=" footerbox">
+          <Footer/>
+          </div>
         </Card>
       </div>
     
