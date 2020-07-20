@@ -135,13 +135,11 @@ pause = () => {
         <StyledCover>
         
         {this.state.play ? 
-        <img src={"https://raw.githubusercontent.com/Hossik/Profilio/master/public/assets/photo390.png"} alt="img"/>
-        
       
-      : 
       <div className='player-wrapper'>
         <ReactPlayer
        onPlay={this.ready}
+       style={{visibility: this.state.ready ? 'visible' : 'hidden' }}
           className='react-player'
           onError={this.switchImage}
           onEnded={this.switchImage}
@@ -153,9 +151,10 @@ pause = () => {
           muted={this.state.muted}
           playing={this.state.pause}
         />
-       
+        <div  style={{display : this.state.ready ?  'none' :'block' ,marginTop : "50vh" ,}}> <WindMillLoading	  size="large" color="rgb(255, 220, 0)"/>
       </div>
-
+      </div>
+:<img src={"https://raw.githubusercontent.com/Hossik/Profilio/master/public/assets/photo390.png"} alt="img"/>
        }
        
         <div className="dark-overlay ">

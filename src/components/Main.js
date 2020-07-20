@@ -75,7 +75,7 @@ class Main extends Component {
           <Header id="head"/>
           <div >
           <TransitionGroup  >
-            <CSSTransition  key={this.props.location.key} classNames="fade" timeout={{ enter: 300, exit: 300 }}>
+            <CSSTransition  key={this.props.location.pathname} classNames="fade" timeout={{ enter: 300, exit: 300 }}>
             <section className="route-section">
           <Switch location={this.props.location}>
             <Route  path="/home" component={Home} />
