@@ -6,11 +6,17 @@ import ReactTextTransition, { presets } from "react-text-transition";
 import {  CSSTransition }from 'react-transition-group';
 import ReactPlayer from 'react-player'
 import { WindMillLoading	 } from 'react-loadingg'
-import { ExternalLink } from 'react-external-link';
 import TweenOne from 'rc-tween-one';
 import PathPlugin from 'rc-tween-one/lib/plugin/PathPlugin';
+import InnerCover from './InnerCover'
+import Cloud from './Cloud'
+import styled from 'styled-components'
+import { ExternalLink } from 'react-external-link';
 
 TweenOne.plugins.push(PathPlugin);
+
+
+
 const duration = 7000;
 const ease = 'easeInOutSine';
 const p =
@@ -43,9 +49,14 @@ const animate = {
 };
 
 
-function BannerImage() {
+class BannerImage extends Component  {
+  
+  render (){
+
+
   return (
     <div className="wrapper-ant-design">
+      
       <svg width="82vw" height="100vh" viewBox="0 0 482 500">
         <defs>
           <path
@@ -53,10 +64,12 @@ function BannerImage() {
             id="mask"
           />
         </defs>
-        <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" transform="translate(0, 30)">
+        <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" transform="translate(0, 30)">  
         <g id="Group-13" transform="translate(0.000000, 41.000000)">
+          
             <TweenOne component="g" animation={animate.redSquare}>
-              <g>
+            
+              <g >
               <rect
                 stroke="#F5222D"
                 strokeWidth="1.6"
@@ -66,22 +79,47 @@ function BannerImage() {
                 width="44.4"
                 height="44.4"
                 rx="55.6"
-              />
-              <text x="160" y="180" font-family="Verdana" font-size="15" fill="red">Hello</text>
+                
+              /> 
+             
+             <ExternalLink   href="https://www.facebook.com/Hossikz">
+              <text x="160" y="180" font-family="Verdana" font-size="15" fill="red">Hello</text> 
+              </ExternalLink>
               </g>
-              <g>
-              <rect x="1" y="1" width="198" height="198"
+             
+              <rect  x="1" y="1" width="198" height="198"
               transform="translate(84.000000, 58.000000) rotate(36.000000) translate(-84.000000, -58.000000) "
         fill="none" stroke="yellow" stroke-width="2" />
-        <text x="50" y="50" font-family="Verdana" font-size="35" fill="blue">Hello</text><symbol id="hossik"  class="fas fa-forward"></symbol></g>
+        <image id="cc4" xlinkHref="../assets/logo.svg" src="../assets/hoss.png" width="90" height="90"/>
+
+
         <g transform="translate(300.000000, 50.000000)">
-        <polygon points="100,10 40,198 190,78 10,78 160,198" style={{fill:"red",stroke:"yellow",strokeWidth:"1",fillRule:"evenodd"}}/></g>
+        
+     
+                    <path
+                      d="M57.378,0.001H3.352C1.502,0.001,0,1.5,0,3.353v54.026c0,1.853,1.502,3.354,3.352,3.354h29.086V37.214h-7.914v-9.167h7.914
+                      v-6.76c0-7.843,4.789-12.116,11.787-12.116c3.355,0,6.232,0.251,7.071,0.36v8.198l-4.854,0.002c-3.805,0-4.539,1.809-4.539,4.462
+                      v5.851h9.078l-1.187,9.166h-7.892v23.52h15.475c1.852,0,3.355-1.503,3.355-3.351V3.351C60.731,1.5,59.23,0.001,57.378,0.001z"
+                      id="line-s"
+                      stroke="#3b5998"
+                      strokeWidth="1.35"
+                      strokeLinecap="round"
+                      transform="translate(127.105708, 73.561453) rotate(-16.000000) translate(-127.105708, -73.561453) "
+                    />
+                 
+             
+
+        </g> 
+        
             </TweenOne>
+           
           </g>
           
+         
           <g id="Group-14" transform="translate(150.000000, 230.000000)">
+            
             <g id="Group-22" transform="translate(62.000000, 7.000000)">
-              <image
+            <image
                 id="cc4"
                 alt="globe"
                 xlinkHref="https://gw.alipayobjects.com/zos/rmsportal/FpKOqFadwoFFIZFExjaf.png"
@@ -106,7 +144,7 @@ function BannerImage() {
                     />
                   </g>
                   <TweenOne component="g" animation={animate.greenBall}>
-                    <image
+                  <image
                       alt="globe"
                       id="id2"
                       xlinkHref="https://www.kindpng.com/picc/b/70/700621.png"
@@ -123,12 +161,8 @@ function BannerImage() {
         </g>
       </svg>
     </div>
-  );
+  );}
 }
-
-const hossik = ["HOSSIK PAGE"," "]
-const welcome = ["WELCOME TO"," "]
-
 
 export class Cover extends Component {
   
@@ -219,10 +253,10 @@ export class Cover extends Component {
     
    
     play = () => {
-  this.setState(state => ({
-    play: !state.play,
+  this.setState({
+    play: !this.state.play,
     ready: false
-  }))
+  })
   }
 
   muted = () => {
@@ -246,17 +280,21 @@ pause = () => {
     pause: !state.pause
   }))
   }
+  shoot = ( ) => {
+    console.log("shoot")
+  }
     render() {
         return (
           
-        <StyledCover>
+        <StyledCover >
         
         {this.state.play ? 
-        
+        <React.Fragment>
         <div className='player-wrapper'>
+       
         <ReactPlayer
-       onPlay={this.ready}
-       style={{visibility: this.state.ready ? 'visible' : 'hidden' }}
+          onPlay={this.ready}
+          style={{visibility: this.state.ready ? 'visible' : 'hidden' }}
           className='react-player'
           onError={this.switchImage}
           onEnded={this.switchImage}
@@ -268,129 +306,59 @@ pause = () => {
           muted={this.state.muted}
           playing={this.state.pause}
         />
-        <div  style={{display : this.state.ready ?  'none' :'block' ,marginTop : "50vh" ,}}> <WindMillLoading	  size="large" color="rgb(255, 220, 0)"/>
+        <div  style={{display : this.state.ready ?  'none' :'block' ,marginTop : "50vh", marginLeft:"100vw"}}> <WindMillLoading	  size="large" color="rgb(255, 220, 0)"/>
       </div>
       </div>
       
-      :
-         
+      <InnerCover
+       currentImage={this.state.currentImage}
+          play={this.state.play}
+          playing={this.play}
+          back={this.state.back}
+          textIndex= {this.state.textIndex}
+          titletime ={this.state.titletime}
+          player = {this.state.player}
+          helpplayer={this.state.helpplayer}
+          duration= {this.state.duration}
+          ready= {this.state.ready}
+          muted={this.state.muted}
+          pause={this.state.pause}
+          images={this.state.images}
+          pausing={this.pause}
+          muting={this.muted}
+          switchImage={this.switchImage}
+          />
+          </React.Fragment>
+      : 
+      <React.Fragment>
+       
       <BannerImage />
-   
+      
+      <InnerCover 
+      
+      currentImage={this.state.currentImage}
+      playing={this.play}
+          play={this.state.play}
+          back={this.state.back}
+          textIndex= {this.state.textIndex}
+          titletime ={this.state.titletime}
+          player = {this.state.player}
+          helpplayer={this.state.helpplayer}
+          duration= {this.state.duration}
+          ready= {this.state.ready}
+          muted={this.state.muted}
+          pause={this.state.pause}
+          images={this.state.images}
+          />
+          
+          </React.Fragment>
       
 
        }
        
-        <div className="dark-overlay ">
-          <CSSTransition
-        in={this.state.play}
-        timeout={300}
-        classNames="helpfooter"
-        unmountOnExit
-        appear     
-      >
-          <div id="mainfooter">
-            <ExternalLink className="mainfooterItem" href="https://example.com">
-              <span>Visit the site</span>
-           </ExternalLink>
-           <ExternalLink className="mainfooterItem" href="https://example.com">
-              <span>Visit the site</span>
-           </ExternalLink>
-           <ExternalLink className="mainfooterItem" href="https://example.com">
-              <span>Visit the site</span>
-           </ExternalLink>
-          </div>
-          </CSSTransition>
-        <div className="scroll">
-          <div id="welcome">
-            Wolcome-{'    '}<span>{'    '}To-</span>{'    '}<span>{'    '}My-{'    '}</span>{'    '}<span>{'    '}Page{'    '}</span>
-            <span className="first">Wolcome-{'    '}</span><span className="first">{'    '}To-</span>{'    '}<span className="first">{'    '}My-{'    '}</span>{'    '}<span className="first">{'    '}Page{'    '}</span>
-            <span>Wolcome-{'    '}</span><span>{'    '}To-</span>{'    '}<span>{'    '}My-{'    '}</span>{'    '}<span>{'    '}Page{'    '}</span>
-          </div>
-        </div>
-        <CSSTransition
-        in={this.state.player}
-        timeout={300}
-        classNames="alertup"
-        unmountOnExit
-        appear     
-      >
-        <div id="controler">
-        <MDBBtn id="play" color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}
-      onClick={this.play}>{this.state.play?<i id="hossik" class="fas fa-play-circle"></i>:<i id="nohossik" class="far fa-stop-circle"></i>}</MDBBtn> { }
-      <CSSTransition
-        in={this.state.play}
-        timeout={300}
-        classNames="helpplayer"
-        unmountOnExit
-        appear     
-      >
-         <div><MDBBtn id="back" color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.switchImage}><i id="hossik"  class="fas fa-forward"></i></MDBBtn>
-      <MDBBtn  color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.muted}>{this.state.muted?<i id="nohossik" class="fas fa-volume-up"></i>:<i id="hossik"  class="fas fa-volume-mute"></i>}</MDBBtn>
-      <MDBBtn  color="elegant" style={{textAlign: 'center',margin: 'auto' ,padding:"auto"}}onClick={this.pause}>{this.state.pause?<i id="nohossik" class="fas fa-pause-circle"></i>:<i id="hossik"  class="fas fa-play-circle"></i>}</MDBBtn> </div>
-      </CSSTransition>
-     </div>
-      </CSSTransition>
-      <CSSTransition
-        in={this.state.helpplayer}
-        timeout={300}
-        classNames="helpplayer"
-        unmountOnExit
-        appear     
-      >
-      <div id="help" style={{  display : this.state.play ?  "none"  : "block" }}>
-        <span><i class="fas fa-angle-double-up"></i></span>
-        <p> stop video background  </p>
-      </div>
-      </CSSTransition>
-        <div className ="landing-inner">
+        
           
-        <div className='inner'>
-          
-            <Main className="hoss"/>
-
-            
-            
-      <CSSTransition
-        in={this.state.titletime}
-        timeout={300}
-        classNames="alertup"
-        unmountOnExit
-        appear     
-      >
-            <section  id= "up" className="linetext">
-            <ReactTextTransition
-               text= { welcome[this.state.textIndex % welcome.length] }
-               springConfig={ presets.molasses
-               }
-               delay={400}
-               className="big"
-               direction="up"
-               inline
-            />
-            </section>
-            </CSSTransition>
-            <CSSTransition
-        in={this.state.titletime}
-        timeout={300}
-        classNames="alertdown"
-        unmountOnExit
-        appear     
-      >
-            <section id="down" className="linetext">
-            <ReactTextTransition
-               text= { hossik[this.state.textIndex % hossik.length] }
-               springConfig={ presets.molasses
-               }
-               delay={400}
-               className="big"
-               direction="down"
-               inline
-            />         
-            </section>
-            </CSSTransition> 
-        </div>
-        </div>
-        </div>
+        
         
         </StyledCover>)
   

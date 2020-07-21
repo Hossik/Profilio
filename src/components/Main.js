@@ -11,6 +11,7 @@ import { Test } from './TestComponent';
 import Header from './Header';
 import AboutMe from './AboutMe';
 import Footer from './Footer';
+import { ExternalLink } from 'react-external-link';
 
 class Main extends Component {
   constructor(props) {
@@ -53,12 +54,15 @@ class Main extends Component {
   return (
       
   <React.Fragment className="container">
-      
+    <ExternalLink   href="https://www.facebook.com/Hossikz">
+      <button style={{background:"red", width:"8vmax",height:"10vmax" ,marginTop:"30vh" ,marginLeft:"4vw" ,position:"absolute",transform: "rotate(-35deg)",opacity:"0"}} >facebook</button>
+      </ExternalLink>
     {this.state.tbn ? <MDBBtn className= " btn  btn-circle btn-xl" color="elegant"
       onClick={this.toggleCollapse("basicCollapse")}>
       <i> <Test
       isOpen={this.state.collapseID}/></i>    
     </MDBBtn> : <div></div>}
+    
     <CSSTransition
           in={this.state.collapseID}
           timeout={300}

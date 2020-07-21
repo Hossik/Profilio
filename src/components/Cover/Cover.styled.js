@@ -2,6 +2,47 @@ import styled from 'styled-components';
 export const StyledCover = styled.div`
 
 position: relative;
+
+.helpfooter-enter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.helpfooter-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 300ms ease-in;
+}
+.helpfooter-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.helpfooter-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
+    transition: all 500ms ease-in-out;
+}
+
+.linetext{
+  margin-top: 9vh;
+  font-family: 'Changa', sans-serif;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size:12em;
+}
+#up{
+  font-size:13vmin ;
+  color: rgb(233, 25, 25);
+  font-weight: bold;
+  z-index: -1;
+}
+#down{ 
+  font-size: 14.5vmin;
+  color: rgb(255, 220, 0);
+  font-weight: bold;
+  z-index: -1;
+}
+
 .wrapper-ant-design {
   display: flex;
   width: 100vw;
@@ -64,6 +105,7 @@ height: 100vh;
   align-items: center;
   justify-content: center;
   bottom:150%;
+  
 }
 .landing-inner{
   color: #fff;
@@ -74,6 +116,16 @@ height: 100vh;
   margin: auto;
   align-items: center;
   text-align: center;
+  
+}
+.light-overlay {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  
+
 }
 .dark-overlay {
   width: 100%;
@@ -205,7 +257,7 @@ background: linear-gradient( rgba(41,41,41, 0.5)2.25%, rgba(41,41,41, 0.1)2.5%,r
 .scroll
 {
   width: 100%;
-  diplay:flex;
+  display:flex;
   
 }
 .first{
@@ -270,55 +322,7 @@ p{
   font-size:2vmin;
 }
 
-.linetext{
-  margin-top: 9vh;
-  font-family: 'Changa', sans-serif;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size:12em;
-}
-#up{
-  font-size:13vmin ;
-  color: rgb(233, 25, 25);
-  font-weight: bold;
-  z-index: -1;
-}
-#down{ 
-  font-size: 14.5vmin;
-  color: rgb(255, 220, 0);
-  font-weight: bold;
-  z-index: -1;
-}
 
-.kal {
-  animation-name: sal;
-  animation-duration: 1.7s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  @keyframes sal {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
-  }
-}
-.helpfooter-enter {
-  opacity: 0;
-  transform: translateY(100%);
-}
-.helpfooter-enter-active {
-  opacity: 1;
-  transform: translateY(0%);
-  transition: all 300ms ease-in;
-}
-.helpfooter-exit {
-  opacity: 1;
-  transform: translateY(0%);
-}
-.helpfooter-exit-active {
-  opacity: 0;
-  transform: translateY(100%);
-    transition: all 500ms ease-in-out;
-}
+
 `;
 
