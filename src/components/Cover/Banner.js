@@ -93,17 +93,20 @@ export class BannerImage extends Component  {
               </TweenOne>
 
               <TweenOne component="g" animation={animate.linkedin}>
+              <g transform="translate(130.000000, -40)">
+              <ExternalLink   href="https://www.instagram.com/hossikz/">
               <image
                       alt="globe"
                       id="id2"
-                      xlinkHref="./assets/instegram.png"
+                      xlinkHref="https://raw.githubusercontent.com/Hossik/Profilio/master/public/instegram.png"
                       x="46"
                       y="62"
                       width="126px"
                       height="126px"
-                    />
-
-
+                    /></ExternalLink>
+                </g>
+                
+                
 
               </TweenOne>
 
@@ -144,9 +147,10 @@ export class BannerImage extends Component  {
 
 
           
-          <g transform="translate(300, 100)">
+          
   <TweenOne component="g" animation={animate.linkedin}>
-	<g>
+    
+	<g transform="translate(360, 100)">
   <rect
     stroke="#0e76a8"
     strokeWidth="3.6"
@@ -172,7 +176,7 @@ export class BannerImage extends Component  {
               <text x="0" y="90" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellosdsdfsd</text>
               </ExternalLink>
 	</g></TweenOne>
-</g>
+
           <g id="Group-14" transform="translate(150.000000, 230.000000)">
             
             <g id="Group-22" transform="translate(62.000000, 7.000000)">
