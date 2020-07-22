@@ -2,7 +2,17 @@ import styled from 'styled-components';
 export const StyledCover = styled.div`
 
 position: relative;
-
+.play{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: 'Changa', sans-serif;
+  align-items: center;
+  justify-content: center;
+  bottom:150%;
+}
 .helpfooter-enter {
   opacity: 0;
   transform: translateY(100%);
@@ -43,17 +53,7 @@ position: relative;
   z-index: -1;
 }
 
-.wrapper-ant-design {
-  display: flex;
-  width: 100vw;
-  height: 100%;
-  transition: margin .5s;
-  background:black;
-  background-image:url("https://www.kindpng.com/picc/b/108/1084703.png");
-  background-repeat: no-repeat;
-  background-repeat: no-repeat; 
-  background-size: cover; 
-}
+
 
 
 
@@ -297,15 +297,7 @@ background: linear-gradient( rgba(41,41,41, 0.5)2.25%, rgba(41,41,41, 0.1)2.5%,r
     transform: translatex(-100%)
   }
 }
-#play{
-  
-  padding: 10px 16px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 350ms;
-  margin-left:10%;
-}
+
 #controler{
   margin-left:3%;
 }
