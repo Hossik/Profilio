@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/Profilio/static/css/main.2e2828ab.chunk.css",
-    "main.js": "/Profilio/static/js/main.82c58644.chunk.js",
-    "main.js.map": "/Profilio/static/js/main.82c58644.chunk.js.map",
+    "main.css": "/Profilio/static/css/main.74abae5e.chunk.css",
+    "main.js": "/Profilio/static/js/main.f7db0fd3.chunk.js",
+    "main.js.map": "/Profilio/static/js/main.f7db0fd3.chunk.js.map",
     "runtime-main.js": "/Profilio/static/js/runtime-main.33917b04.js",
     "runtime-main.js.map": "/Profilio/static/js/runtime-main.33917b04.js.map",
-    "static/css/2.4d979cb7.chunk.css": "/Profilio/static/css/2.4d979cb7.chunk.css",
-    "static/js/2.ca19c48c.chunk.js": "/Profilio/static/js/2.ca19c48c.chunk.js",
-    "static/js/2.ca19c48c.chunk.js.map": "/Profilio/static/js/2.ca19c48c.chunk.js.map",
+    "static/css/2.52373259.chunk.css": "/Profilio/static/css/2.52373259.chunk.css",
+    "static/js/2.5e13c3eb.chunk.js": "/Profilio/static/js/2.5e13c3eb.chunk.js",
+    "static/js/2.5e13c3eb.chunk.js.map": "/Profilio/static/js/2.5e13c3eb.chunk.js.map",
     "index.html": "/Profilio/index.html",
-    "precache-manifest.6640ce450c7ddc0f041b3ed2abed4f9b.js": "/Profilio/precache-manifest.6640ce450c7ddc0f041b3ed2abed4f9b.js",
+    "precache-manifest.3c01e01984a9fdb0c3c340adc939cfa9.js": "/Profilio/precache-manifest.3c01e01984a9fdb0c3c340adc939cfa9.js",
     "service-worker.js": "/Profilio/service-worker.js",
-    "static/css/2.4d979cb7.chunk.css.map": "/Profilio/static/css/2.4d979cb7.chunk.css.map",
-    "static/css/main.2e2828ab.chunk.css.map": "/Profilio/static/css/main.2e2828ab.chunk.css.map",
-    "static/js/2.ca19c48c.chunk.js.LICENSE.txt": "/Profilio/static/js/2.ca19c48c.chunk.js.LICENSE.txt",
+    "static/css/2.52373259.chunk.css.map": "/Profilio/static/css/2.52373259.chunk.css.map",
+    "static/css/main.74abae5e.chunk.css.map": "/Profilio/static/css/main.74abae5e.chunk.css.map",
+    "static/js/2.5e13c3eb.chunk.js.LICENSE.txt": "/Profilio/static/js/2.5e13c3eb.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/Profilio/static/media/arrow_right.8ef6a08c.svg",
     "static/media/all.min.css": "/Profilio/static/media/fa-solid-900.ec763292.svg",
     "static/media/font-awesome.css": "/Profilio/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.33917b04.js",
-    "static/css/2.4d979cb7.chunk.css",
-    "static/js/2.ca19c48c.chunk.js",
-    "static/css/main.2e2828ab.chunk.css",
-    "static/js/main.82c58644.chunk.js"
+    "static/css/2.52373259.chunk.css",
+    "static/js/2.5e13c3eb.chunk.js",
+    "static/css/main.74abae5e.chunk.css",
+    "static/js/main.f7db0fd3.chunk.js"
   ]
 }
