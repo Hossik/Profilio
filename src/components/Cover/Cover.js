@@ -1,14 +1,8 @@
 import { StyledCover } from './Cover.styled';
-
 import React, { Component } from 'react';
-
 import ReactPlayer from 'react-player'
 import { WindMillLoading	 } from 'react-loadingg'
-
 import InnerCover from './InnerCover'
-
-
-
 
 export class Cover extends Component {
   

@@ -16,8 +16,7 @@ const p =
   'M123.5,89.5 C148,82.5 239.5,48.5 230,17.5 C220.5,-13.5 127,6 99.5,13.5 C72,21 -9.5,56.5 1.5,84.5 C12.5,112.5 99,96.5 123.5,89.5 Z';
 const easePath =
   'M0,100 C7.33333333,89 14.3333333,81.6666667 21,78 C25.3601456,75.6019199 29.8706084,72.9026327 33,70 C37.0478723,66.2454406 39.3980801,62.0758689 42.5,57 C48,46.5 61.5,32.5 70,28 C77.5,23.5 81.5,20 86.5,16 C89.8333333,13.3333333 94.3333333,8 100,0';
-  const sead =
-  'M 0 100 C 7.3333 89 14.3333 81.6667 21 78 C 25.3601 75.6019 29.8706 72.9026 23 55 C 37.0479 66.2454 39.3981 62.0759 42.5 57 C 48 46.5 73 60 70 28 C 77.5 23.5 81.5 20 97 31 C 89.8333 13.3333 94.3333 8 100 0'
+  
 const loop = {
   yoyo: true,
   repeat: -1,
@@ -63,7 +62,7 @@ export class BannerImage extends Component  {
 
   return (
     <div className="wrapper-ant-design">   
-      <svg width="82vw" height="100vh" viewBox="0 0 482 500">
+      <svg width="100vw" height="100vh" viewBox="0 0 482 500">
         <defs>
           <path
             d="M151,55 C129.666667,62.6666667 116,74.3333333 110,90 C104,105.666667 103,118.5 107,128.5 L225.5,96 C219.833333,79 209.666667,67 195,60 C180.333333,53 165.666667,51.3333333 151,55 L137,0 L306.5,6.5 L306.5,156 L227,187.5 L61.5,191 C4.5,175 -12.6666667,147.833333 10,109.5 C32.6666667,71.1666667 75,34.6666667 137,0 L151,55 Z"
@@ -176,6 +175,25 @@ export class BannerImage extends Component  {
               <text x="0" y="90" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellosdsdfsd</text>
               </ExternalLink>
 	</g></TweenOne>
+
+  <TweenOne component="g" animation={animate.linkedin}>
+              <g transform="translate(330.000000, 200)">
+              <ExternalLink   href="https://github.com/Hossik">
+              <image
+                      alt="globe"
+                      id="id2"
+                      xlinkHref="https://raw.githubusercontent.com/Hossik/Profilio/master/public/assets/GitHub-Mark-Light-120px-plus.png"
+                      x="46"
+                      y="62"
+                      width="126px"
+                      height="126px"
+                    /></ExternalLink>
+                </g>
+                
+                
+
+              </TweenOne>
+
 
           <g id="Group-14" transform="translate(150.000000, 230.000000)">
             

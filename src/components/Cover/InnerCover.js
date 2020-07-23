@@ -1,15 +1,13 @@
 import { StyledCover } from './Cover.styled';
 import Main from '../Main';
 import Player from '../Player';
-import React, { Component } from 'react';
-import { MDBBtn} from 'mdbreact';
+import React from 'react';
+
 import ReactTextTransition, { presets } from "react-text-transition";
 import {  CSSTransition }from 'react-transition-group';
-import ReactPlayer from 'react-player'
-import { WindMillLoading	 } from 'react-loadingg'
+
 import { ExternalLink } from 'react-external-link';
-import TweenOne from 'rc-tween-one';
-import PathPlugin from 'rc-tween-one/lib/plugin/PathPlugin';
+
 import { BannerImage } from './Banner';
 
 const hossik = ["HOSSIK PAGE"," "]
@@ -21,10 +19,31 @@ const welcome = ["WELCOME TO"," "]
         <StyledCover>
     
     <div className={props.play? "dark-overlay ":"light-overlay"}>
-      
+    <CSSTransition
+          in={props.play}
+          timeout={300}
+          classNames="helpfooter"
+          unmountOnExit
+          appear     
+        >
+          
+            <div id="mainfooter" >
+            
+              <ExternalLink   className="mainfooterItem" href="https://example.com">
+                <span>Visit the site</span>
+             </ExternalLink>
+             <ExternalLink className="mainfooterItem" href="https://example.com">
+                <span>Visit the site</span>
+             </ExternalLink>
+             <ExternalLink className="mainfooterItem" href="https://example.com">
+                <span>Visit the site</span>
+             </ExternalLink>
+            </div>
+            </CSSTransition> 
+    
         
           <div className ="landing-inner">
-
+          
           {props.play? <div></div>:<BannerImage />}
           <div className ="play">
             <Player  
@@ -49,36 +68,10 @@ const welcome = ["WELCOME TO"," "]
           
           <div className='inner'>
           
-          <CSSTransition
-          in={props.play}
-          timeout={300}
-          classNames="helpfooter"
-          unmountOnExit
-          appear     
-        >
+         
           
-            <div id="mainfooter" >
             
-              <ExternalLink   className="mainfooterItem" href="https://example.com">
-                <span>Visit the site</span>
-             </ExternalLink>
-             <ExternalLink className="mainfooterItem" href="https://example.com">
-                <span>Visit the site</span>
-             </ExternalLink>
-             <ExternalLink className="mainfooterItem" href="https://example.com">
-                <span>Visit the site</span>
-             </ExternalLink>
-            </div>
-            </CSSTransition>
-            
-            
-          <div  className="scroll">
-            <div id="welcome" >
-              Wolcome-{'    '}<span>{'    '}To-</span>{'    '}<span>{'    '}My-{'    '}</span>{'    '}<span>{'    '}Page{'    '}</span>
-              <span className="first">Wolcome-{'    '}</span><span className="first">{'    '}To-</span>{'    '}<span className="first">{'    '}My-{'    '}</span>{'    '}<span className="first">{'    '}Page{'    '}</span>
-              <span>Wolcome-{'    '}</span><span>{'    '}To-</span>{'    '}<span>{'    '}My-{'    '}</span>{'    '}<span>{'    '}Page{'    '}</span>
-            </div>
-          </div>
+          
           
               <Main className="hoss"  />
           
