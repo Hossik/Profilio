@@ -36,16 +36,29 @@ const animate = {
     duration: 4000,
     delay: 200,
   },
+  insta: {
+    ...loop,
+    y: -35,
+    duration: 4000,
+    delay: 200,
+  },
+  git: {
+    ...loop,
+    y: -55,
+    x: -15,
+    duration: 4000,
+    delay: 200,
+  },
   greenBall: {
     path: { x: p, y: p },
-    duration: 5000,
+    duration: 10000,
     repeat: -1,
     ease: TweenOne.easing.path(easePath, { lengthPixel: 400 }),
   },
   linkedin: {
     ...loop,
-    y: 35,
-    x:35,
+    y: -35,
+    x: 35,
     duration: 4000,
     delay: 400,
   },
@@ -57,49 +70,95 @@ const animate = {
 
 
 export class BannerImage extends Component  {
-  
+  constructor(props) {
+    super(props);
+   
+    
+    this.state = {
+      apearGit:false,
+      apearlinked:false,
+      apearface:false,
+      apearinsta:false,
+      dark:false,
+      pause: false,
+      pauseface: false,
+      pauselinked: false,
+      pausegit:false
+    }
+  }
+  componentDidMount() {
+    
+    this.intervalGit = setInterval(() => {this.setState({
+      apearGit: true
+    }); }, 9000);
+    this.intervallinked = setInterval(() => {this.setState({
+      apearlinked: true
+    }); }, 8000);
+    this.intervalface = setInterval(() => {this.setState({
+      apearface: true
+    }); }, 10000);
+    this.intervalinsta = setInterval(() => {this.setState({
+      apearinsta: true
+    }); }, 11000);
+  }
+
+
+
+  onMouseOut = () => {
+    this.setState(state => ({
+      pause: !state.pause
+    }))
+    }
+    onMouseOver = () => this.setState({pause : "true" });
+
+    onMouseOutgit = () => {
+      this.setState(state => ({
+        pausegit: !state.pausegit
+      }))
+      }
+      onMouseOvergit = () => this.setState({pausegit : "true" });
+    
+    onMouseOutface = () => {
+      this.setState(state => ({
+        pauseface: !state.pauseface
+      }))
+      }
+      onMouseOverface = () => this.setState({pauseface : "true" });
+      onMouseOutlinked = () => {
+        this.setState(state => ({
+          pauselinked: !state.pauselinked
+        }))
+        }
+        onMouseOverlinked = () => this.setState({pauselinked : "true" });
   render (){
 
   return (
-    <div className="wrapper-ant-design">   
-      <svg width="100vw" height="100vh" viewBox="0 0 482 500">
+    <div className= "dark-wrapper-design"> 
+    
+      <svg width="100vw" height="100vh" viewBox="0 0 582 500">
         <defs>
           <path
-            d="M151,55 C129.666667,62.6666667 116,74.3333333 110,90 C104,105.666667 103,118.5 107,128.5 L225.5,96 C219.833333,79 209.666667,67 195,60 C180.333333,53 165.666667,51.3333333 151,55 L137,0 L306.5,6.5 L306.5,156 L227,187.5 L61.5,191 C4.5,175 -12.6666667,147.833333 10,109.5 C32.6666667,71.1666667 75,34.6666667 137,0 L151,55 Z"
+            d="M 151 55 C 129.6667 62.6667 116 74.3333 110 90 C 104 105.6667 103 118.5 133 111 L 225.5 96 C 219.8333 79 209.6667 67 195 60 C 180.3333 53 165.6667 51.3333 151 55 L 137 0 L 379 8 L 382 150 L 227 187.5 L 61.5 191 C 4.5 175 -12.6667 147.8333 10 109.5 C 32.6667 71.1667 75 34.6667 137 0 L 151 55 Z"
             id="mask"
           />
         </defs>
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" transform="translate(0, 30)">  
         <g id="Group-13" transform="translate(0.000000, 41.000000)">
-          
-            <TweenOne component="g" animation={animate.redSquare}>
-              <g >
-              <rect
-                stroke="#F5222D"
-                strokeWidth="1.6"
-                transform="translate(184.000000, 18.000000) rotate(8.000000) translate(-184.000000, -18.000000) "
-                x="176.8"
-                y="150.8"
-                width="44.4"
-                height="44.4"
-                rx="55.6"
-              /> 
-             
-              <ExternalLink   href="https://www.facebook.com/Hossikz">
-                <text x="160" y="180" font-family="Verdana" font-size="15" fill="red">Hello</text> 
-              </ExternalLink>
-              </g>
-              </TweenOne>
+        
+            
 
-              <TweenOne component="g" animation={animate.linkedin}>
-              <g transform="translate(130.000000, -40)">
+              {this.state.apearinsta ?<TweenOne paused={this.state.pause} onMouseLeave={this.onMouseOut} onMouseOver={this.onMouseOver} className="stop" component="g" animation={animate.insta}>
+              <g transform="translate(0, 150)">
+
+
+              
               <ExternalLink   href="https://www.instagram.com/hossikz/">
               <image
                       alt="globe"
                       id="id2"
                       xlinkHref="https://raw.githubusercontent.com/Hossik/Profilio/master/public/instegram.png"
-                      x="46"
-                      y="62"
+                      x="6"
+                      y="2"
                       width="126px"
                       height="126px"
                     /></ExternalLink>
@@ -107,39 +166,33 @@ export class BannerImage extends Component  {
                 
                 
 
-              </TweenOne>
+              </TweenOne> : <div></div>}
 
 
 
-              <TweenOne component="g" animation={animate.facebook}>
-
-              <g transform="translate(100.000000, 20.000000)">
+              { this.state.apearface ? <TweenOne paused={this.state.pauseface} onMouseLeave={this.onMouseOutface} onMouseOver={this.onMouseOverface} component="g" animation={animate.facebook} className="stop">
+              <ExternalLink   href="https://www.facebook.com/Hossikz">
+              <g transform="translate(430.000000, 200)">
           <path
             d="M57.378,0.001H3.352C1.502,0.001,0,1.5,0,3.353v54.026c0,1.853,1.502,3.354,3.352,3.354h29.086V37.214h-7.914v-9.167h7.914
             v-6.76c0-7.843,4.789-12.116,11.787-12.116c3.355,0,6.232,0.251,7.071,0.36v8.198l-4.854,0.002c-3.805,0-4.539,1.809-4.539,4.462
             v5.851h9.078l-1.187,9.166h-7.892v23.52h15.475c1.852,0,3.355-1.503,3.355-3.351V3.351C60.731,1.5,59.23,0.001,57.378,0.001z"
             id="line-s"
             stroke="#3b5998"
-            strokeWidth="5.35"
+            strokeWidth="3.35"
             strokeLinecap="round"
             transform="translate(127.105708, 73.561453) rotate(-16.000000) translate(-127.105708, -73.561453) "
           />
-            <ExternalLink   href="https://www.facebook.com/Hossikz">
-              <text x="0" y="30" font-family="Verdana" font-size="15" fill="red" opacity="0">Hello</text> 
-              <text x="0" y="40" font-family="Verdana" font-size="15" fill="red" opacity="0">Hellosd</text>
-              <text x="0" y="50" font-family="Verdana" font-size="15" fill="red" opacity="0">Hellosd</text>
-              <text x="0" y="60" font-family="Verdana" font-size="15" fill="red" opacity="0">Hello</text> 
-              <text x="0" y="70" font-family="Verdana" font-size="15" fill="red" opacity="0">Hellosd</text>
-              <text x="0" y="80" font-family="Verdana" font-size="15" fill="red" opacity="0">Hellosd</text>
-              <text x="0" y="90" font-family="Verdana" font-size="15" fill="red" opacity="0">Hellosd</text>
-            </ExternalLink>
+            
+              
+            
         </g> 
-
+        </ExternalLink> 
 
 
 
         
-          </TweenOne>
+          </TweenOne>: <div></div> }
            
           </g>
 
@@ -147,8 +200,8 @@ export class BannerImage extends Component  {
 
           
           
-  <TweenOne component="g" animation={animate.linkedin}>
-    
+  {this.state.apearlinked ? <TweenOne paused={this.state.pauselinked} onMouseLeave={this.onMouseOutlinked} onMouseOver={this.onMouseOverlinked} component="g" animation={animate.linkedin} className="stop">
+  <ExternalLink   href="https://www.linkedin.com/in/hossik">
 	<g transform="translate(360, 100)">
   <rect
     stroke="#0e76a8"
@@ -163,22 +216,15 @@ export class BannerImage extends Component  {
 		<path   d="M1.15 21.7h13V61h-13zm46.55-1.3c-5.7 0-9.1 2.1-12.7 6.7v-5.4H22V61h13.1V39.7c0-4.5 2.3-8.9 7.5-8.9s8.3 4.4 8.3 8.8V61H64V38.7c0-15.5-10.5-18.3-16.3-18.3zM7.7 2.6C3.4 2.6 0 5.7 0 9.5s3.4 6.9 7.7 6.9 7.7-3.1 7.7-6.9S12 2.6 7.7 2.6z"
       stroke="#0e76a8" strokeWidth="3.35" strokeLinecap="round"
       transform="translate(1.105708, 63.561453) rotate(16.000000) translate(-1.105708, -63.561453) "/>
-		<ExternalLink   href="https://www.linkedin.com/in/hossik">
-    <text x="0" y="10" font-family="Verdana" font-size="15" fill="red" opacity="0">Hellosdsfasxds</text> 
-    <text x="0" y="20" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellosasxadsfds</text> 
-              <text x="0" y="30" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellosasxsaxds</text> 
-              <text x="0" y="40" font-family="Verdana" font-size="15" fill="red" opacity="0" >Helloasxsaxsdsd</text>
-              <text x="0" y="50" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellasxasxosds</text>
-              <text x="0" y="60" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellosaxsaxsds</text> 
-              <text x="0" y="70" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellasxasxosdsdf</text>
-              <text x="0" y="80" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellossaxxdsdf</text>
-              <text x="0" y="90" font-family="Verdana" font-size="15" fill="red" opacity="0" >Hellosdsdfsd</text>
-              </ExternalLink>
-	</g></TweenOne>
+		
+    
+             
+	</g> </ExternalLink></TweenOne> : <div></div>}
 
-  <TweenOne component="g" animation={animate.linkedin}>
-              <g transform="translate(330.000000, 200)">
+  {this.state.apearGit ? <TweenOne paused={this.state.pausegit} onMouseLeave={this.onMouseOutgit} onMouseOver={this.onMouseOvergit} component="g" animation={animate.git} className="stop">
+              <g transform="translate(100.000000, 20.000000)">
               <ExternalLink   href="https://github.com/Hossik">
+              <div className="firefly"></div>
               <image
                       alt="globe"
                       id="id2"
@@ -191,6 +237,24 @@ export class BannerImage extends Component  {
                 </g>
                 
                 
+
+              </TweenOne> : <div></div>}
+              <TweenOne component="g" transform="translate(50.000000, 40.000000)">
+                  
+                  <image
+                 
+                  className="brightness "
+                      alt="globe"
+                      id="id2"
+                      
+                      xlinkHref="https://image.freepik.com/free-vector/comet-transparent-background-bright-star-starry-beautiful-path-shooting-star-comet-tail-meteor-flies-space-object_220217-626.jpg"
+                      x="46"
+                      y="62"
+                      width="126px"
+                      height="126px"
+                    />
+
+
 
               </TweenOne>
 
@@ -223,14 +287,15 @@ export class BannerImage extends Component  {
                     />
                   </g>
                   <TweenOne component="g" animation={animate.greenBall}>
+                  
                   <image
                       alt="globe"
                       id="id2"
                       xlinkHref="https://www.kindpng.com/picc/b/70/700621.png"
                       x="16"
-                      y="62"
-                      width="26px"
-                      height="26px"
+                      y="52"
+                      width="36px"
+                      height="36px"
                     />
                   </TweenOne>
                 </g>

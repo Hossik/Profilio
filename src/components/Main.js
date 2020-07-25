@@ -11,7 +11,7 @@ import { Test } from './TestComponent';
 import Header from './Header';
 import AboutMe from './AboutMe';
 import Footer from './Footer';
-import { ExternalLink } from 'react-external-link';
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -94,6 +94,7 @@ class Main extends Component {
           </TransitionGroup>
           </div>
           <div className=" footerbox">
+          
           <Footer/>
           </div>
         </Card>

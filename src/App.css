@@ -1,3 +1,49 @@
+
+
+
+html, body, #root, #root>div {
+  background:black;
+  background-image:url("https://i2.wp.com/www.handsomephantom.com/wp-content/uploads/2017/07/Space-Wallpapers-HD-Wallpapers-Art-Prints-Posters-Desktop.jpg?fit=2048%2C1130&ssl=1");
+  
+
+  background-size: cover; 
+  animation: 
+  darkrise 90s ease infinite alternate, 
+  dark 10s linear  alternate;
+  background-position:-100% -100%;
+
+} 
+
+
+@keyframes darkrise {
+    0%{
+      
+      background-size: 100%; 
+    }  
+    50%{
+      background-position:-80% -80%;
+      background-size: 150%; 
+      }
+    100%{
+ 
+      background-size: 100%;
+    }
+  }
+  @keyframes dark {
+    0%{
+      transform: scale(0.75);
+     
+      
+    }  
+    50%{
+      transform: scale(0.85);
+    
+      }
+    100%{
+      transform: scale(1);
+      
+    }
+  }
 .hoss{
   font-family: 'Changa', sans-serif;
   align-items: center;
@@ -5,11 +51,6 @@
   margin-top: 100px;
 }
 
-#cardimage{
-  border-radius: 5% 5%;
-  height: 10%;
-  width: 10%;
-}
 #card{
   width:65vw;
   height: 77vh;
@@ -45,6 +86,7 @@
     color: rgb(233, 25, 25);
     font-weight: bold;
     z-index: -1;   
+    filter: drop-shadow(3px 3px 10px rgb(233, 25, 25)) brightness(3);
 }
 
 #nohossik{
@@ -52,6 +94,8 @@
     color: rgb(255, 220, 0);
     font-weight: bold;
     z-index: -1;
+    filter: drop-shadow(3px 3px 10px  rgb(255, 220, 0)) brightness(3);
+
 }
 
 .btn-circle.btn-xl {
@@ -65,6 +109,7 @@
   outline: none;
   cursor: pointer;
   transition: background-color 350ms;
+  filter: drop-shadow(3px 3px 1px #4444dd);
 }
 
 .tn{
@@ -129,86 +174,6 @@ div.transition-group {
 section.route-section {
   position: absolute; 
 }
-
-
-
-
-/* @media (max-width: 767px) {
-  
-
-  .footer{
-    position: absolute;
-    margin-top: 220%;
-    width: 95%;
-  }
-  .textCard{
-    margin-top: 0rem;
-    padding: 0rem;
-    text-align: center;
-    margin-left: 0%;
-  }
-  #card{
-    width:20rem;
-    height: 50rem;
-    font-size: 1.5rem;
-  }
-  } */
-
-/* @media only screen and (max-width: 769px) and (min-width: 767px)  {
-  .footer{ 
-    margin-top: 120%;
-  }
- 
-  .textCard{
-    margin-left: -8%; 
-  }
-}
-
-@media  (max-device-width: 480px) and (orientation: landscape) {
-
-  .footer{
-    position: absolute;
-    margin-top: 120%;
-    width: 95%;
-  }
-}
-@media  (max-device-width: 767px) and (orientation: landscape) {
-  .footer{
-    margin-top: 130%;
-  }
-  #zir{
-    margin-left: 0rem;
-   }
-  #card{
-    width:105rem;
-    height: 50rem;
-    font-size: 1.5rem;
-  }
-}
-@media  (min-device-width: 767px) and (orientation: landscape) {
-  .textCard{
-    margin-left: -8%;
-  }
-  .footer{   
-    margin-top: 120%;
-  }
-
-}
-
-@media  (min-device-width: 991px) and (orientation: landscape) {
-  .textCard{
-    margin-left: 10%; 
-  }
-  .footer{   
-    margin-top: 90%;
-  }
-}
-
-@media  (min-device-width: 1199px) and (orientation: landscape) {
-  .footer{
-    margin-top: 80%;
-  }
-} */
 
 
 #head{
@@ -464,16 +429,6 @@ section.route-section {
 
 
 
-.wrapper-ant-design {
-  display: flex;
-  width: 100vw;
-  height: 100%;
-  transition: margin .5s;
-  background:black;
-  background-image:url("https://www.kindpng.com/picc/b/108/1084703.png");
-  background-repeat: no-repeat;
-  background-repeat: no-repeat; 
-  background-size: cover; 
-}
+
 
 

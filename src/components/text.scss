@@ -11,6 +11,7 @@ $bl-color: #FFDC00;
     }
   }
   &-header {
+    filter: drop-shadow(3px 3px 1px #4444dd);
     margin-top: 9vh;
     text-align: center;
     font-size: 10vmin;
@@ -42,9 +43,9 @@ $bl-color: #FFDC00;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       @keyframes blinker {
-        0% { opacity: 1.0; }
-        50% { opacity: 0.0; }
-        100% { opacity: 1.0; }
+        0% { filter: drop-shadow(3px 3px 10px  rgb(0, 238, 255)) brightness(3); }
+        50% { filter: drop-shadow(3px 3px 10px  rgb(5, 5, 5)) brightness(3);}
+        100% { filter: drop-shadow(3px 3px 10px  rgb(0, 238, 255)) brightness(3); }
       }
     }
   }

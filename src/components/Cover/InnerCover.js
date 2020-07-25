@@ -1,12 +1,10 @@
-import { StyledCover } from './Cover.styled';
 import Main from '../Main';
-import Player from '../Player';
 import React from 'react';
 
 import ReactTextTransition, { presets } from "react-text-transition";
 import {  CSSTransition }from 'react-transition-group';
 
-import { ExternalLink } from 'react-external-link';
+
 
 import { BannerImage } from './Banner';
 
@@ -16,67 +14,25 @@ const welcome = ["WELCOME TO"," "]
  const InnerCover = (props) => {
    
     return(
-        <StyledCover>
-    
-    <div className={props.play? "dark-overlay ":"light-overlay"}>
-    <CSSTransition
-          in={props.play}
-          timeout={300}
-          classNames="helpfooter"
-          unmountOnExit
-          appear     
-        >
-          
-            <div id="mainfooter" >
-            
-              <ExternalLink   className="mainfooterItem" href="https://example.com">
-                <span>Visit the site</span>
-             </ExternalLink>
-             <ExternalLink className="mainfooterItem" href="https://example.com">
-                <span>Visit the site</span>
-             </ExternalLink>
-             <ExternalLink className="mainfooterItem" href="https://example.com">
-                <span>Visit the site</span>
-             </ExternalLink>
-            </div>
-            </CSSTransition> 
-    
         
-          <div className ="landing-inner">
+    
+    <div className="light-overlay">
+    
+    
+    <div className ="landing-inner">
+
+     
           
-          {props.play? <div></div>:<BannerImage />}
+          <BannerImage dark={props.dark}/>
+          
           <div className ="play">
-            <Player  
-              
-              currentImage={props.currentImage}
-            play={props.play}
-            playing={props.playing}
-            back={props.back}
-            textIndex= {props.textIndex}
-            titletime ={props.titletime}
-            player = {props.player}
-            helpplayer={props.helpplayer}
-            duration= {props.duration}
-            ready= {props.ready}
-            muted={props.muted}
-            pause={props.pause}
-            images={props.images}
-            pausing={props.pausing}
-            muting={props.muting}
-            switchImage={props.switchImage}/>
+           
             </div>
           
           <div className='inner'>
-          
-         
-          
-            
-          
-          
-              <Main className="hoss"  />
-          
-              
-              
+      
+            <Main className="hoss"  />
+    
         <CSSTransition
           in={props.titletime}
           timeout={300}
@@ -119,9 +75,9 @@ const welcome = ["WELCOME TO"," "]
           </div>
           </div>
           
-    </div>
+</div>
    
-    </StyledCover>
+   
     )
   
   }
