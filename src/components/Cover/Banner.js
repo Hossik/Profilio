@@ -247,7 +247,7 @@ export class BannerImage extends Component  {
                       alt="globe"
                       id="id2"
                       
-                      xlinkHref="https://image.freepik.com/free-vector/comet-transparent-background-bright-star-starry-beautiful-path-shooting-star-comet-tail-meteor-flies-space-object_220217-626.jpg"
+                      xlinkHref="https://www.vhv.rs/dpng/d/457-4578818_ftestickers-background-space-galaxy-stars-transparent-background-hd.png"
                       x="46"
                       y="62"
                       width="126px"
