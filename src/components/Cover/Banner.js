@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 import TweenOne from 'rc-tween-one';
 import PathPlugin from 'rc-tween-one/lib/plugin/PathPlugin';
-
 import { ExternalLink } from 'react-external-link';
 
 TweenOne.plugins.push(PathPlugin);
@@ -12,6 +11,8 @@ TweenOne.plugins.push(PathPlugin);
 
 const duration = 7000;
 const ease = 'easeInOutSine';
+const easeOutElastic = 'easeOutElastic';
+
 const p =
   'M123.5,89.5 C148,82.5 239.5,48.5 230,17.5 C220.5,-13.5 127,6 99.5,13.5 C72,21 -9.5,56.5 1.5,84.5 C12.5,112.5 99,96.5 123.5,89.5 Z';
 const easePath =
@@ -22,8 +23,10 @@ const loop = {
   repeat: -1,
   duration,
   ease,
+  
 };
 const animate = {
+  
   redSquare: {
     ...loop,
     y: 15,
@@ -53,6 +56,7 @@ const animate = {
     path: { x: p, y: p },
     duration: 10000,
     repeat: -1,
+    grayScale:1,
     ease: TweenOne.easing.path(easePath, { lengthPixel: 400 }),
   },
   linkedin: {
@@ -83,7 +87,13 @@ export class BannerImage extends Component  {
       pause: false,
       pauseface: false,
       pauselinked: false,
-      pausegit:false
+      pausegit:false,
+      StartStarApear:false,
+      starapear:false,
+      x: 150,
+      y: 150,
+      a: 150,
+      w: 150,
     }
   }
   componentDidMount() {
@@ -100,9 +110,44 @@ export class BannerImage extends Component  {
     this.intervalinsta = setInterval(() => {this.setState({
       apearinsta: true
     }); }, 11000);
+    this.intervalStartStarApear = setInterval(this.StartStarApear, 11000);
+    this.intervalStarApear = setInterval(this.starapear, 0);
+    this.intervalremoveStartStarApear = setInterval(this.removeStartStarApear,601)
+    this.intervalremovestarapear = setInterval(this.removestarapear,600)
+    this.interval = setInterval(() => {
+      this.setState({
+        x: 32 + Math.floor(246 * Math.random()),
+        y: 32 + Math.floor(246 * Math.random())
+      })
+    }, 1000)
+  
   }
 
-
+  StartStarApear = () => {
+    this.setState ({
+      StartStarApear: true
+    })
+    }
+  removeStartStarApear = ( ) => {
+    if (this.state.StartStarApear === true){
+      this.setState  ({
+        StartStarApear: false
+      })
+    }
+  }
+starapear = () => {
+  if (this.state.StartStarApear===true) {
+    this.setState ({
+      starapear: true
+    })
+  }
+  }
+  removestarapear = () => {
+    if (this.state.starapear===true) {
+      this.setState ({
+        starapear: false
+      })}
+    }
 
   onMouseOut = () => {
     this.setState(state => ({
@@ -131,7 +176,7 @@ export class BannerImage extends Component  {
         }
         onMouseOverlinked = () => this.setState({pauselinked : "true" });
   render (){
-
+let {x, y} = this.state
   return (
     <div className= "dark-wrapper-design"> 
     
@@ -145,15 +190,15 @@ export class BannerImage extends Component  {
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" transform="translate(0, 30)">  
         <g id="Group-13" transform="translate(0.000000, 41.000000)">
         
-            
-
-              {this.state.apearinsta ?<TweenOne paused={this.state.pause} onMouseLeave={this.onMouseOut} onMouseOver={this.onMouseOver} className="stop" component="g" animation={animate.insta}>
+        
+              {this.state.apearinsta ?<TweenOne  paused={this.state.pause} onMouseLeave={this.onMouseOut} onMouseOver={this.onMouseOver} className="stop" component="g" animation={animate.insta}>
               <g transform="translate(0, 150)">
 
 
               
               <ExternalLink   href="https://www.instagram.com/hossikz/">
               <image
+              
                       alt="globe"
                       id="id2"
                       xlinkHref="https://raw.githubusercontent.com/Hossik/Profilio/master/public/instegram.png"
@@ -162,6 +207,8 @@ export class BannerImage extends Component  {
                       width="126px"
                       height="126px"
                     /></ExternalLink>
+                  
+
                 </g>
                 
                 
@@ -170,9 +217,9 @@ export class BannerImage extends Component  {
 
 
 
-              { this.state.apearface ? <TweenOne paused={this.state.pauseface} onMouseLeave={this.onMouseOutface} onMouseOver={this.onMouseOverface} component="g" animation={animate.facebook} className="stop">
+              { this.state.apearface ? <TweenOne  paused={this.state.pauseface} onMouseLeave={this.onMouseOutface} onMouseOver={this.onMouseOverface} component="g" animation={animate.facebook} className="stop">
               <ExternalLink   href="https://www.facebook.com/Hossikz">
-              <g transform="translate(430.000000, 200)">
+              <g transform="translate(430.000000, 200)" >
           <path
             d="M57.378,0.001H3.352C1.502,0.001,0,1.5,0,3.353v54.026c0,1.853,1.502,3.354,3.352,3.354h29.086V37.214h-7.914v-9.167h7.914
             v-6.76c0-7.843,4.789-12.116,11.787-12.116c3.355,0,6.232,0.251,7.071,0.36v8.198l-4.854,0.002c-3.805,0-4.539,1.809-4.539,4.462
@@ -221,8 +268,8 @@ export class BannerImage extends Component  {
              
 	</g> </ExternalLink></TweenOne> : <div></div>}
 
-  {this.state.apearGit ? <TweenOne paused={this.state.pausegit} onMouseLeave={this.onMouseOutgit} onMouseOver={this.onMouseOvergit} component="g" animation={animate.git} className="stop">
-              <g transform="translate(100.000000, 20.000000)">
+  {this.state.apearGit ? <TweenOne paused={this.state.pausegit} onMouseLeave={this.onMouseOutgit} onMouseOver={this.onMouseOvergit} component="g" animation={animate.git} className="stop" style={{transform: 'translate(50px,30px)'  }}>
+              <g transform="translate(100.000000, 20.000000)" >
               <ExternalLink   href="https://github.com/Hossik">
               <div className="firefly"></div>
               <image
@@ -239,24 +286,27 @@ export class BannerImage extends Component  {
                 
 
               </TweenOne> : <div></div>}
-              <TweenOne component="g" transform="translate(50.000000, 40.000000)">
+              {this.state.starapear ?<TweenOne component="g" transform="translate(100.000000, 100.000000)" animation={{easeOutElastic,
+    y: 12 +- Math.floor(246 * Math.random()),
+    x: 43 +- Math.floor(246 * Math.random()),
+    duration: 400,
+    boxShadow: '0 0 30px rgba(255,125,0,0.5)'
+  }}  style={{
+         
+          transform: `translateX(${x}px) translateY(${y}px)`
+        }}>
                   
                   <image
-                 
                   className="brightness "
                       alt="globe"
                       id="id2"
-                      
-                      xlinkHref="https://www.vhv.rs/dpng/d/457-4578818_ftestickers-background-space-galaxy-stars-transparent-background-hd.png"
+                      xlinkHref="https://previews.123rf.com/images/jubal1210/jubal12101712/jubal1210171200105/91961456-shining-star-with-a-stardust-lights-and-bursts-sparkles-with-stardust-on-transparent-background-ligh.jpg"
                       x="46"
                       y="62"
                       width="126px"
                       height="126px"
                     />
-
-
-
-              </TweenOne>
+              </TweenOne> : <div></div>}
 
 
           <g id="Group-14" transform="translate(150.000000, 230.000000)">
